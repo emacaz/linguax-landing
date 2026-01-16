@@ -7,7 +7,7 @@ const Header: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <nav className="flex justify-between items-center">
                     <div className="text-3xl font-extrabold tracking-tight">
-                        Lingua<span className="text-violet-500">X</span>
+                        Lingua<span className="text-violet-500">X</span> Ai
                     </div>
                      <a
                         href="https://wa.me/34613476568?text=Hola,%20me%20gustaría%20solicitar%20una%20demo%20de%20LinguaX."
