@@ -6,7 +6,7 @@ export default {
   "hero": {
     "title": "La Infraestructura de Voz IA para Equipos de Alto Rendimiento",
     "subtitle": "Transformamos la comunicación de su equipo de ventas y soporte con entrenamiento de voz en tiempo real, impulsado por IA.",
-    "cta": "Solicitar Demo gratuita"
+    "cta": "Probar Demo Gratis"
   },
   "trustedBy": {
     "title": "Impulsando a los equipos más exigentes"
@@ -116,6 +116,7 @@ export default {
     },
     "recording": {
       "instruction": "Mantén presionado para grabar",
+      "enableMic": "Haz clic para activar el micrófono",
       "tooShort": "Mantén presionado más tiempo.",
       "noSpeech": "No se detectó audio. Inténtalo de nuevo.",
       "incomplete": "Intenta decir la frase completa."

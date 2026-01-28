@@ -6,7 +6,7 @@ export default {
   "hero": {
     "title": "The AI Voice Infrastructure for High-Performance Teams",
     "subtitle": "We transform your sales and support team's communication with real-time, AI-powered voice coaching.",
-    "cta": "Request a Free Demo"
+    "cta": "Try Demo for Free"
   },
   "trustedBy": {
     "title": "Powering the most demanding teams"
@@ -116,6 +116,7 @@ export default {
     },
     "recording": {
       "instruction": "Press and hold to record",
+      "enableMic": "Click to enable microphone",
       "tooShort": "Hold down for longer.",
       "noSpeech": "No speech detected. Please try again.",
       "incomplete": "Try to say the full phrase."

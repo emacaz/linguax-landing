@@ -56,6 +56,7 @@ const InteractiveWidget: React.FC<InteractiveWidgetProps> = ({ onOpenModal }) =>
     const [analysisResult, setAnalysisResult] = useState<any>(null);
     const [errorMessageKey, setErrorMessageKey] = useState<string | null>(null);
     const [pronouncedWordCount, setPronouncedWordCount] = useState(0);
+    const [isMicReady, setIsMicReady] = useState(false);
     
     const mediaRecorder = useRef<MediaRecorder | null>(null);
     const streamRef = useRef<MediaStream | null>(null);
@@ -64,23 +65,47 @@ const InteractiveWidget: React.FC<InteractiveWidgetProps> = ({ onOpenModal }) =>
     const animationFrameId = useRef<number | null>(null);
     
     const pronouncedWordCountRef = useRef(0);
-    const staminaRef = useRef(0);
+    const currentWordProgressRef = useRef(0);
     const lastFrameTimeRef = useRef(0);
+    const recordingStartTimeRef = useRef<number>(0);
 
     const scenarios: Scenario[] = ['pharma', 'financial', 'tech'];
-    const WORDS_PER_MINUTE = 150;
-    const REQUIRED_COMPLETENESS_TOLERANCE = 0.80; // Must pronounce at least 80% of the words
-    const STAMINA_DECAY_RATE = 1.2; // Stamina decays 20% faster than it builds
+    const WORDS_PER_MINUTE = 120;
+    const REQUIRED_COMPLETENESS_TOLERANCE = 0.80;
+    const PACING_TOLERANCE_RATIO = 1.35; // Allow up to 35% longer than ideal time
+    const PACING_PENALTY_SCALE = 0.6; // Harshness of the penalty
+
+    useEffect(() => {
+        return () => {
+            if (streamRef.current) {
+                streamRef.current.getTracks().forEach(track => track.stop());
+            }
+        };
+    }, []);
 
     const phraseData = useMemo(() => {
         const phrase = t(`interactiveWidget.scenarios.${activeScenario}.phrase`);
         const words = phrase.split(' ');
         const wordCount = words.length;
         const totalChars = words.reduce((acc, word) => acc + word.length, 0);
+        const effectiveTotalChars = totalChars + (wordCount > 1 ? wordCount - 1 : 0);
         const requiredDurationMs = (wordCount / WORDS_PER_MINUTE) * 60 * 1000;
-        const msPerChar = requiredDurationMs / totalChars;
-        const wordBudgets = words.map(word => word.length * msPerChar + 20); // Add small buffer for each word
-        return { phrase, words, wordCount, wordBudgets };
+        const msPerChar = requiredDurationMs / effectiveTotalChars;
+
+        const wordTimestamps: number[] = [];
+        let cumulativeTime = 0;
+        words.forEach((word, index) => {
+            const wordDuration = (word.length + (index < words.length - 1 ? 1 : 0)) * msPerChar;
+            cumulativeTime += wordDuration;
+            wordTimestamps.push(cumulativeTime);
+        });
+
+        const wordDurations = wordTimestamps.map((ts, i) => {
+            const prevTs = i > 0 ? wordTimestamps[i - 1] : 0;
+            return ts - prevTs;
+        });
+        
+        return { phrase, words, wordCount, wordTimestamps, wordDurations };
     }, [t, activeScenario]);
 
     const cleanup = () => {
@@ -88,100 +113,105 @@ const InteractiveWidget: React.FC<InteractiveWidgetProps> = ({ onOpenModal }) =>
             cancelAnimationFrame(animationFrameId.current);
             animationFrameId.current = null;
         }
-        if (streamRef.current) {
-            streamRef.current.getTracks().forEach(track => track.stop());
-        }
         if (audioContext.current && audioContext.current.state !== 'closed') {
             audioContext.current.close();
         }
     };
 
     const detectSpeech = () => {
-        if (analyser.current) {
-            const dataArray = new Uint8Array(analyser.current.fftSize);
-            analyser.current.getByteTimeDomainData(dataArray);
-            let isSpeaking = false;
-            for (let i = 0; i < dataArray.length; i++) {
-                if (Math.abs(dataArray[i] - 128) > 10) {
-                    isSpeaking = true;
-                    break;
-                }
-            }
+        if (!analyser.current) return;
 
-            const now = Date.now();
-            const delta = now - lastFrameTimeRef.current;
-            lastFrameTimeRef.current = now;
-
-            if (isSpeaking) {
-                staminaRef.current += delta;
-            } else {
-                staminaRef.current = Math.max(0, staminaRef.current - delta * STAMINA_DECAY_RATE);
-            }
-
-            while (
-                pronouncedWordCountRef.current < phraseData.wordBudgets.length &&
-                staminaRef.current >= phraseData.wordBudgets[pronouncedWordCountRef.current]
-            ) {
-                staminaRef.current -= phraseData.wordBudgets[pronouncedWordCountRef.current];
-                pronouncedWordCountRef.current++;
-            }
-            
-            if (pronouncedWordCountRef.current !== pronouncedWordCount) {
-                setPronouncedWordCount(pronouncedWordCountRef.current);
+        const dataArray = new Uint8Array(analyser.current.fftSize);
+        analyser.current.getByteTimeDomainData(dataArray);
+        let isSpeaking = false;
+        for (let i = 0; i < dataArray.length; i++) {
+            if (Math.abs(dataArray[i] - 128) > 10) {
+                isSpeaking = true;
+                break;
             }
         }
+
+        const now = Date.now();
+        const delta = now - lastFrameTimeRef.current;
+        lastFrameTimeRef.current = now;
+
+        if (isSpeaking) {
+            let currentWordIdx = pronouncedWordCountRef.current;
+            if (currentWordIdx < phraseData.wordCount) {
+                currentWordProgressRef.current += delta;
+                
+                while (currentWordIdx < phraseData.wordCount && currentWordProgressRef.current >= phraseData.wordDurations[currentWordIdx]) {
+                    currentWordProgressRef.current -= phraseData.wordDurations[currentWordIdx];
+                    currentWordIdx++;
+                }
+
+                if (pronouncedWordCountRef.current !== currentWordIdx) {
+                    pronouncedWordCountRef.current = currentWordIdx;
+                    setPronouncedWordCount(currentWordIdx);
+                }
+            }
+        }
+
         animationFrameId.current = requestAnimationFrame(detectSpeech);
     };
 
-    const handleStartRecording = async () => {
-        if (errorMessageKey) setErrorMessageKey(null);
-        setPronouncedWordCount(0);
-        pronouncedWordCountRef.current = 0;
-        staminaRef.current = 0;
-        lastFrameTimeRef.current = Date.now();
+    const prepareMicrophone = async () => {
         setWidgetState('permission');
-        
         try {
             const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
             streamRef.current = stream;
-            setWidgetState('recording');
-
-            mediaRecorder.current = new MediaRecorder(stream);
-            mediaRecorder.current.onstop = () => {
-                cleanup();
-                
-                if (pronouncedWordCountRef.current === 0) {
-                    setWidgetState('idle');
-                    setErrorMessageKey('interactiveWidget.recording.noSpeech');
-                    setTimeout(() => setErrorMessageKey(null), 2500);
-                    return;
-                }
-                
-                const completenessRatio = pronouncedWordCountRef.current / phraseData.wordCount;
-
-                if (completenessRatio < REQUIRED_COMPLETENESS_TOLERANCE) {
-                    setWidgetState('idle');
-                    setErrorMessageKey('interactiveWidget.recording.incomplete');
-                    setTimeout(() => setErrorMessageKey(null), 2500);
-                    return;
-                }
-                
-                runAnalysis(completenessRatio);
-            };
-            
-            audioContext.current = new (window.AudioContext || (window as any).webkitAudioContext)();
-            analyser.current = audioContext.current.createAnalyser();
-            const source = audioContext.current.createMediaStreamSource(stream);
-            source.connect(analyser.current);
-            
-            mediaRecorder.current.start();
-            animationFrameId.current = requestAnimationFrame(detectSpeech);
-
+            setIsMicReady(true);
+            setWidgetState('idle');
         } catch (err) {
             console.error("Error accessing microphone:", err);
             alert(t('interactiveWidget.permissions.denied'));
             setWidgetState('idle');
         }
+    };
+
+    const handleStartRecording = () => {
+        if (!isMicReady || !streamRef.current) return;
+        
+        recordingStartTimeRef.current = Date.now();
+        if (errorMessageKey) setErrorMessageKey(null);
+        setPronouncedWordCount(0);
+        pronouncedWordCountRef.current = 0;
+        currentWordProgressRef.current = 0;
+        lastFrameTimeRef.current = Date.now();
+        setWidgetState('recording');
+
+        mediaRecorder.current = new MediaRecorder(streamRef.current);
+        mediaRecorder.current.onstop = () => {
+            cleanup();
+
+            const actualDuration = Date.now() - recordingStartTimeRef.current;
+            
+            if (pronouncedWordCountRef.current === 0) {
+                setWidgetState('idle');
+                setErrorMessageKey('interactiveWidget.recording.noSpeech');
+                setTimeout(() => setErrorMessageKey(null), 2500);
+                return;
+            }
+            
+            const completenessRatio = pronouncedWordCountRef.current / phraseData.wordCount;
+
+            if (completenessRatio < REQUIRED_COMPLETENESS_TOLERANCE) {
+                setWidgetState('idle');
+                setErrorMessageKey('interactiveWidget.recording.incomplete');
+                setTimeout(() => setErrorMessageKey(null), 2500);
+                return;
+            }
+            
+            runAnalysis(completenessRatio, actualDuration);
+        };
+        
+        audioContext.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+        analyser.current = audioContext.current.createAnalyser();
+        const source = audioContext.current.createMediaStreamSource(streamRef.current);
+        source.connect(analyser.current);
+        
+        mediaRecorder.current.start();
+        animationFrameId.current = requestAnimationFrame(detectSpeech);
     };
 
     const handleStopRecording = () => {
@@ -193,7 +223,7 @@ const InteractiveWidget: React.FC<InteractiveWidgetProps> = ({ onOpenModal }) =>
         }
     };
     
-    const runAnalysis = (completenessRatio: number) => {
+    const runAnalysis = (completenessRatio: number, actualDuration: number) => {
         setWidgetState('analyzing');
         
         setTimeout(() => {
@@ -206,8 +236,17 @@ const InteractiveWidget: React.FC<InteractiveWidgetProps> = ({ onOpenModal }) =>
             } else {
                 qualityScore = Math.floor(Math.random() * (84 - 78 + 1)) + 78;
             }
+
+            const expectedDuration = phraseData.wordTimestamps[phraseData.wordTimestamps.length - 1];
+            const pacingRatio = actualDuration / expectedDuration;
             
-            const finalScore = Math.round(qualityScore * (completenessRatio ** 2));
+            let pacingPenaltyFactor = 1.0;
+            if (pacingRatio > PACING_TOLERANCE_RATIO) {
+                const excessRatio = pacingRatio - PACING_TOLERANCE_RATIO;
+                pacingPenaltyFactor = Math.max(0.4, 1.0 - (excessRatio * PACING_PENALTY_SCALE));
+            }
+            
+            const finalScore = Math.round(qualityScore * (completenessRatio ** 2) * pacingPenaltyFactor);
     
             let qualitativeLabelKey: string;
             if (finalScore >= 90) qualitativeLabelKey = 'elite';
@@ -241,12 +280,12 @@ const InteractiveWidget: React.FC<InteractiveWidgetProps> = ({ onOpenModal }) =>
                 <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">{t('interactiveWidget.hook.title')}</h2>
                 <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-400">{t('interactiveWidget.hook.subtitle')}</p>
             </div>
-            <div className="mt-10 max-w-4xl mx-auto bg-[#0F0F1A]/50 border border-gray-800 rounded-2xl p-8">
+            <div className="mt-10 max-w-4xl mx-auto bg-[#0F0F1A]/50 border border-gray-800 rounded-2xl p-8 select-none">
                 <div className="flex justify-center border-b border-gray-700 mb-6">
                     {scenarios.map(s => (
                         <button 
                             key={s} 
-                            onClick={() => { setActiveScenario(s); setPronouncedWordCount(0); }}
+                            onClick={() => { setActiveScenario(s); setPronouncedWordCount(0); currentWordProgressRef.current = 0; }}
                             className={`px-4 py-3 text-sm font-semibold transition-colors duration-200 border-b-2 ${activeScenario === s ? 'text-violet-400 border-violet-400' : 'text-gray-400 border-transparent hover:text-white'}`}
                         >
                             {t(`interactiveWidget.scenarios.${s}.label`)}
@@ -262,22 +301,37 @@ const InteractiveWidget: React.FC<InteractiveWidgetProps> = ({ onOpenModal }) =>
                     ))}
                 </div>
                 <div className="mt-8 flex flex-col items-center">
-                    <button
-                        onMouseDown={handleStartRecording}
-                        onMouseUp={handleStopRecording}
-                        onTouchStart={handleStartRecording}
-                        onTouchEnd={handleStopRecording}
-                        className="relative flex items-center justify-center w-20 h-20 bg-violet-600 rounded-full text-white shadow-lg shadow-violet-600/30 hover:bg-violet-700 transition-all duration-300 transform hover:scale-110 focus:outline-none"
-                        aria-label={t('interactiveWidget.recording.instruction')}
-                    >
-                        <MicrophoneIcon className="w-8 h-8"/>
-                        {widgetState === 'recording' && <div className="absolute inset-0 rounded-full border-4 border-violet-400 animate-ping"></div>}
-                    </button>
+                    {isMicReady ? (
+                        <button
+                            onMouseDown={handleStartRecording}
+                            onMouseUp={handleStopRecording}
+                            onTouchStart={handleStartRecording}
+                            onTouchEnd={handleStopRecording}
+                            className="relative flex items-center justify-center w-20 h-20 bg-violet-600 rounded-full text-white shadow-lg shadow-violet-600/30 hover:bg-violet-700 transition-all duration-300 transform hover:scale-110 focus:outline-none"
+                            aria-label={t('interactiveWidget.recording.instruction')}
+                        >
+                            <MicrophoneIcon className="w-8 h-8"/>
+                            {widgetState === 'recording' && <div className="absolute inset-0 rounded-full border-4 border-violet-400 animate-ping"></div>}
+                        </button>
+                    ) : (
+                         <button
+                            onClick={prepareMicrophone}
+                            className="relative flex items-center justify-center w-20 h-20 bg-violet-600 rounded-full text-white shadow-lg shadow-violet-600/30 hover:bg-violet-700 transition-all duration-300 transform hover:scale-110 focus:outline-none"
+                            aria-label={t('interactiveWidget.recording.enableMic')}
+                        >
+                            <MicrophoneIcon className="w-8 h-8"/>
+                        </button>
+                    )}
                     <p className="mt-4 text-sm text-gray-500 h-5 flex items-center justify-center">
-                        {errorMessageKey 
-                            ? <span className="text-amber-400 font-semibold">{t(errorMessageKey)}</span>
-                            : <span>{t('interactiveWidget.recording.instruction')}</span>
-                        }
+                        {errorMessageKey ? (
+                            <span className="text-amber-400 font-semibold">{t(errorMessageKey)}</span>
+                        ) : (
+                            <span>
+                                {isMicReady 
+                                    ? t('interactiveWidget.recording.instruction') 
+                                    : t('interactiveWidget.recording.enableMic')}
+                            </span>
+                        )}
                     </p>
                 </div>
             </div>
@@ -297,13 +351,17 @@ const InteractiveWidget: React.FC<InteractiveWidgetProps> = ({ onOpenModal }) =>
         
         const showFrictionWordAnalysis = completenessRatio > 0.9;
 
+        const scoreColorClass = score <= 65
+            ? 'bg-gradient-to-br from-amber-500 to-red-600'
+            : 'bg-gradient-to-br from-violet-400 to-blue-500';
+
         return (
             <div className="max-w-4xl mx-auto bg-[#0F0F1A]/50 border border-gray-800 rounded-2xl p-8">
                  <h3 className="text-2xl font-bold text-white text-center mb-8">{t('interactiveWidget.results.title')}</h3>
                  <div className="grid md:grid-cols-3 gap-8">
                     <div className="md:col-span-1 flex flex-col items-center justify-center text-center p-6 bg-gray-900/50 rounded-lg">
                         <p className="text-sm font-semibold text-gray-400 uppercase">{t('interactiveWidget.results.clarityIndexLabel')}</p>
-                        <p className="text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-br from-violet-400 to-blue-500 my-2">{score}%</p>
+                        <p className={`text-7xl font-extrabold bg-clip-text text-transparent ${scoreColorClass} my-2`}>{score}%</p>
                         <p className="px-3 py-1 text-sm font-semibold rounded-full bg-violet-600/30 text-violet-300">{qualitativeLabel}</p>
                     </div>
                     <div className="md:col-span-2 space-y-6">
