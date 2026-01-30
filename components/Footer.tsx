@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { XIcon, LinkedInIcon } from './icons';
 
 const Footer: React.FC = () => {
     const { t } = useTranslation();
@@ -14,8 +15,28 @@ const Footer: React.FC = () => {
                         {t('footer.badge')}
                     </p>
                     <p className="mt-4">
-                        &copy; {currentYear} LinguaX. {t('footer.copyright')}
+                        &copy; {currentYear} Lingua Tech Inc. {t('footer.copyright')}
                     </p>
+                </div>
+                <div className="mt-6 flex justify-center items-center space-x-6">
+                    <a 
+                        href="https://x.com/LinguaX_AI" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="LinguaX on X"
+                        className="text-gray-500 hover:text-white transition-colors duration-300"
+                    >
+                        <XIcon />
+                    </a>
+                    <a 
+                        href="https://www.linkedin.com/company/linguax-ai/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="LinguaX on LinkedIn"
+                        className="text-gray-500 hover:text-white transition-colors duration-300"
+                    >
+                        <LinkedInIcon />
+                    </a>
                 </div>
             </div>
         </footer>
