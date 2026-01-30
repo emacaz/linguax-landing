@@ -3,11 +3,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const companies = [
-    'La Nave Madrid (España)',
+    'La Nave Madrid',
     'NextGen Solutions',
-    'UAO (Colombia)',
+    'UAO, Colombia',
     'Apex Enterprises',
-    'Cresia Consulting',
+    'Cresia Consulting SL',
     'Stellar Dynamics'
 ];
 
