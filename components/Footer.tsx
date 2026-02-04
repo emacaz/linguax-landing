@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
                         {t('footer.badge')}
                     </p>
                     <p className="mt-4">
-                        &copy; {currentYear} Lingua Tech Inc. {t('footer.copyright')}
+                        &copy; {currentYear} LinguaX. {t('footer.copyright')}
                     </p>
                 </div>
                 <div className="mt-6 flex justify-center items-center space-x-6">

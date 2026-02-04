@@ -1,7 +1,8 @@
 
 export default {
   "header": {
-    "contact": "Contact"
+    "contact": "Contact",
+    "login": "Login"
   },
   "hero": {
     "title": "The AI Voice Infrastructure for High-Performance Teams",
@@ -162,5 +163,14 @@ export default {
     "permissions": {
       "denied": "Microphone permission denied. Please enable it in your browser settings to use this feature."
     }
+  },
+  "login": {
+    "title": "Sign in to your account",
+    "emailLabel": "Business Email",
+    "passwordLabel": "Password",
+    "forgotPassword": "Forgot your password?",
+    "submitButton": "Sign In",
+    "noAccount": "Don't have an account yet?",
+    "contactSales": "Contact Sales"
   }
 }
