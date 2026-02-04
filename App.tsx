@@ -10,9 +10,11 @@ import HowItWorks from './components/HowItWorks';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import FormModal from './components/FormModal';
+import Login from './components/Login';
 
 const App: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [view, setView] = useState('landing'); // 'landing' or 'login'
     const { i18n, t } = useTranslation();
     const interactiveWidgetRef = useRef<HTMLDivElement>(null);
 
@@ -30,6 +32,12 @@ const App: React.FC = () => {
     const handleScrollToDemo = () => {
         interactiveWidgetRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
+    const showLoginPage = () => setView('login');
+    const showLandingPage = () => setView('landing');
+
+    if (view === 'login') {
+        return <Login onShowLanding={showLandingPage} />;
+    }
 
     return (
         <div className="bg-[#05050A] text-white">
@@ -40,7 +48,7 @@ const App: React.FC = () => {
                 </div>
             </div>
             <div className="relative z-10">
-                <Header onOpenModal={handleOpenModal} />
+                <Header onOpenModal={handleOpenModal} onShowLogin={showLoginPage} />
                 <main>
                     <Hero onOpenModal={handleOpenModal} onScrollToDemo={handleScrollToDemo} />
                     <div ref={interactiveWidgetRef}>

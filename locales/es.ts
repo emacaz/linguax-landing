@@ -1,7 +1,8 @@
 
 export default {
   "header": {
-    "contact": "Contactar"
+    "contact": "Contactar",
+    "login": "Iniciar Sesión"
   },
   "hero": {
     "title": "La Infraestructura de Voz IA para Equipos de Alto Rendimiento",
@@ -162,5 +163,14 @@ export default {
     "permissions": {
       "denied": "Permiso de micrófono denegado. Por favor, actívalo en la configuración de tu navegador para usar esta función."
     }
+  },
+  "login": {
+    "title": "Accede a tu cuenta",
+    "emailLabel": "Email Corporativo",
+    "passwordLabel": "Contraseña",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "submitButton": "Iniciar Sesión",
+    "noAccount": "¿Aún no tienes cuenta?",
+    "contactSales": "Contacta a Ventas"
   }
 }
