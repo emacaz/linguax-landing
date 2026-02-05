@@ -11,10 +11,11 @@ import CTA from './components/CTA';
 import Footer from './components/Footer';
 import FormModal from './components/FormModal';
 import Login from './components/Login';
+import Dashboard from './components/Dashboard';
 
 const App: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [view, setView] = useState('landing'); // 'landing' or 'login'
+    const [view, setView] = useState<'landing' | 'login' | 'dashboard'>('landing');
     const { i18n, t } = useTranslation();
     const interactiveWidgetRef = useRef<HTMLDivElement>(null);
 
@@ -34,9 +35,14 @@ const App: React.FC = () => {
     };
     const showLoginPage = () => setView('login');
     const showLandingPage = () => setView('landing');
+    const showDashboardPage = () => setView('dashboard');
 
     if (view === 'login') {
-        return <Login onShowLanding={showLandingPage} />;
+        return <Login onShowLanding={showLandingPage} onShowDashboard={showDashboardPage} />;
+    }
+    
+    if (view === 'dashboard') {
+        return <Dashboard onShowLanding={showLandingPage} />;
     }
 
     return (

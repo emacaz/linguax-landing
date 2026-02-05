@@ -171,6 +171,24 @@ export default {
     "forgotPassword": "¿Olvidaste tu contraseña?",
     "submitButton": "Iniciar Sesión",
     "noAccount": "¿Aún no tienes cuenta?",
-    "contactSales": "Contacta a Ventas"
+    "contactSales": "Contacta a Ventas",
+    "error": "Correo no reconocido. Contacta a soporte si crees que es un error."
+  },
+  "dashboard": {
+    "welcome": "Hola, Luzmila. Estamos preparando el entorno LinguaX para <1>Cresia Consulting S.L.</1>",
+    "title": "Tu Entrenador de Voz IA se está calibrando.",
+    "status": {
+      "profile": "Perfil de usuario creado.",
+      "workspace": "Espacio de trabajo para <1>Cresia Consulting S.L.</1> configurado.",
+      "calibrating": "Calibrando modelos de IA con benchmarks de la industria.",
+      "analyzing": "Analizando patrones de comunicación de equipos de alto rendimiento.",
+      "generating": "Generando tus primeras métricas de Claridad Ejecutiva.",
+      "completed": "Completado",
+      "inProgress": "En Proceso...",
+      "pending": "Pendiente"
+    },
+    "info": "Este proceso inicial puede tardar varias horas. Queríamos darte un acceso anticipado para que vieras nuestro progreso.",
+    "nextSteps": "Recibirás un correo electrónico tan pronto como tu dashboard esté 100% operativo.",
+    "cta": "Entendido, volver a la página principal"
   }
 }
