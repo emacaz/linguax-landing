@@ -1,18 +1,34 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { SpinnerIcon } from './icons';
 
 interface LoginProps {
     onShowLanding: () => void;
+    onShowDashboard: () => void;
 }
 
-const Login: React.FC<LoginProps> = ({ onShowLanding }) => {
+const Login: React.FC<LoginProps> = ({ onShowLanding, onShowDashboard }) => {
     const { t } = useTranslation();
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // Login logic will be implemented later
-        alert('Login functionality is not yet implemented.');
+        setError(null);
+        setIsLoading(true);
+
+        const formData = new FormData(e.currentTarget);
+        const email = formData.get('email') as string;
+
+        setTimeout(() => {
+            setIsLoading(false);
+            if (email.toLowerCase() === 'lgaray@cresiaconsulting.com') {
+                onShowDashboard();
+            } else {
+                setError(t('login.error'));
+            }
+        }, 1500);
     };
 
     return (
@@ -42,7 +58,8 @@ const Login: React.FC<LoginProps> = ({ onShowLanding }) => {
                                         type="email"
                                         autoComplete="email"
                                         required
-                                        className="mt-1 block w-full bg-gray-900/50 border border-gray-700 rounded-md shadow-sm py-3 px-4 text-white focus:outline-none focus:ring-violet-500 focus:border-violet-500"
+                                        disabled={isLoading}
+                                        className="mt-1 block w-full bg-gray-900/50 border border-gray-700 rounded-md shadow-sm py-3 px-4 text-white focus:outline-none focus:ring-violet-500 focus:border-violet-500 disabled:opacity-50"
                                     />
                                 </div>
                             </div>
@@ -65,17 +82,21 @@ const Login: React.FC<LoginProps> = ({ onShowLanding }) => {
                                         type="password"
                                         autoComplete="current-password"
                                         required
-                                        className="mt-1 block w-full bg-gray-900/50 border border-gray-700 rounded-md shadow-sm py-3 px-4 text-white focus:outline-none focus:ring-violet-500 focus:border-violet-500"
+                                        disabled={isLoading}
+                                        className="mt-1 block w-full bg-gray-900/50 border border-gray-700 rounded-md shadow-sm py-3 px-4 text-white focus:outline-none focus:ring-violet-500 focus:border-violet-500 disabled:opacity-50"
                                     />
                                 </div>
                             </div>
+                            
+                            {error && <p className="text-sm text-red-400 text-center">{error}</p>}
 
                             <div>
                                 <button
                                     type="submit"
-                                    className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-violet-500"
+                                    disabled={isLoading}
+                                    className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-violet-500 disabled:opacity-60 disabled:cursor-not-allowed"
                                 >
-                                    {t('login.submitButton')}
+                                    {isLoading ? <SpinnerIcon /> : t('login.submitButton')}
                                 </button>
                             </div>
                         </form>
