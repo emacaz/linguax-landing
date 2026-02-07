@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MicrophoneIcon } from './icons';
 
-type Scenario = 'pharma' | 'financial' | 'tech';
+type Scenario = 'pharma' | 'financial' | 'tech' | 'legal';
 type WidgetState = 'idle' | 'permission' | 'recording' | 'analyzing' | 'results';
 
 interface InteractiveWidgetProps {
@@ -69,7 +69,7 @@ const InteractiveWidget: React.FC<InteractiveWidgetProps> = ({ onOpenModal }) =>
     const lastFrameTimeRef = useRef(0);
     const recordingStartTimeRef = useRef<number>(0);
 
-    const scenarios: Scenario[] = ['pharma', 'financial', 'tech'];
+    const scenarios: Scenario[] = ['pharma', 'financial', 'tech', 'legal'];
     const WORDS_PER_MINUTE = 120;
     const REQUIRED_COMPLETENESS_TOLERANCE = 0.80;
     const PACING_TOLERANCE_RATIO = 1.35; // Allow up to 35% longer than ideal time
@@ -281,7 +281,7 @@ const InteractiveWidget: React.FC<InteractiveWidgetProps> = ({ onOpenModal }) =>
                 <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-400">{t('interactiveWidget.hook.subtitle')}</p>
             </div>
             <div className="mt-10 max-w-4xl mx-auto bg-[#0F0F1A]/50 border border-gray-800 rounded-2xl p-8 select-none">
-                <div className="flex justify-center border-b border-gray-700 mb-6">
+                <div className="flex justify-center border-b border-gray-700 mb-6 flex-wrap">
                     {scenarios.map(s => (
                         <button 
                             key={s} 

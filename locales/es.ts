@@ -114,6 +114,14 @@ export default {
         "frictionWord": "architecture",
         "tooltipAnalysis": "La sílaba 'tec' fue enfatizada en exceso, rompiendo el flujo natural de la frase y distrayendo del mensaje principal.",
         "tooltipImpact": "Una entrega poco fluida puede hacer que conceptos técnicos complejos parezcan confusos, generando dudas en la estrategia."
+      },
+      "legal": {
+        "label": "Legal",
+        "context": "Estás presentando un argumento clave ante un juez. Di la siguiente frase con firmeza:",
+        "phrase": "The precedent set by this case is incontrovertible.",
+        "frictionWord": "incontrovertible",
+        "tooltipAnalysis": "La sílaba 'ver' se pronunció con una entonación plana, reduciendo el énfasis en el significado central de irrefutabilidad de la palabra.",
+        "tooltipImpact": "En un entorno legal, la falta de convicción fonética en una palabra de poder como 'incontrovertible' puede ser interpretada inconscientemente por un juez o jurado como una falta de confianza en el propio argumento."
       }
     },
     "recording": {
