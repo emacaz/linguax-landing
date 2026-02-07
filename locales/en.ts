@@ -175,20 +175,58 @@ export default {
     "error": "Email not recognized. Contact support if you believe this is an error."
   },
   "dashboard": {
-    "welcome": "Hello, Luzmila. We are preparing the LinguaX environment for <1>Cresia Consulting S.L.</1>",
-    "title": "Your AI Voice Coach is being calibrated.",
-    "status": {
-      "profile": "User profile created.",
-      "workspace": "Workspace for <1>Cresia Consulting S.L.</1> configured.",
-      "calibrating": "Calibrating AI models with industry benchmarks.",
-      "analyzing": "Analyzing communication patterns from high-performance teams.",
-      "generating": "Generating your first Executive Clarity metrics.",
-      "completed": "Completed",
-      "inProgress": "In Progress...",
-      "pending": "Pending"
+    "welcome": "Welcome, {{name}}.",
+    "companyDashboard": "Performance Dashboard for {{company}}",
+    "userView": "My View (Consultant)",
+    "managerView": "Team View (Manager)",
+    "logout": "Log Out",
+    "user": {
+      "brs": {
+        "title": "Business Readiness Score (BRS)"
+      },
+      "confidence": {
+        "title": "Pitch Confidence Level",
+        "ready": "Client Ready"
+      },
+      "vocabulary": {
+        "title": "Technical Vocabulary Mastery"
+      },
+      "roadmap": {
+        "title": "Improvement Roadmap",
+        "step1": "Complete 'Essential Phonetics' module.",
+        "step2": "Reduce filler words by 20%.",
+        "step3": "Practice 'Regulatory Submission' pitch."
+      },
+      "recordings": {
+        "title": "My Best Recordings"
+      }
     },
-    "info": "This initial process can take several hours. We wanted to give you early access to see our progress.",
-    "nextSteps": "You will receive an email as soon as your dashboard is 100% operational.",
-    "cta": "Got it, take me back to the main page"
+    "manager": {
+      "brs": {
+        "title": "Team Average BRS"
+      },
+      "practiceTime": {
+        "title": "Total Practice Time"
+      },
+      "costSavings": {
+        "title": "Estimated Savings (vs. Tutor)",
+        "change": "This quarter"
+      },
+      "activeUsers": {
+        "title": "Active Users"
+      },
+      "teamPerformance": {
+        "title": "Performance by Team"
+      },
+      "hesitationAnalysis": {
+        "title": "Hesitation Analysis (Overall)"
+      }
+    },
+    "table": {
+        "team": "Team / Consultant",
+        "brs": "BRS",
+        "confidence": "Confidence",
+        "practiceHours": "Practice Hours"
+    }
   }
 }

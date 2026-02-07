@@ -2,15 +2,16 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SpinnerIcon } from './icons';
+import { User } from './dashboard/types';
 
 interface LoginProps {
     onShowLanding: () => void;
-    onShowDashboard: () => void;
+    onLoginSuccess: (user: User) => void;
 }
 
-const Login: React.FC<LoginProps> = ({ onShowLanding, onShowDashboard }) => {
+const Login: React.FC<LoginProps> = ({ onShowLanding, onLoginSuccess }) => {
     const { t } = useTranslation();
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -24,7 +25,11 @@ const Login: React.FC<LoginProps> = ({ onShowLanding, onShowDashboard }) => {
         setTimeout(() => {
             setIsLoading(false);
             if (email.toLowerCase() === 'lgaray@cresiaconsulting.com') {
-                onShowDashboard();
+                onLoginSuccess({
+                    name: 'Luzmila Garay',
+                    company: 'Cresia Consulting S.L.',
+                    role: 'manager'
+                });
             } else {
                 setError(t('login.error'));
             }

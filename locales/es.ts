@@ -175,20 +175,58 @@ export default {
     "error": "Correo no reconocido. Contacta a soporte si crees que es un error."
   },
   "dashboard": {
-    "welcome": "Hola, Luzmila. Estamos preparando el entorno LinguaX para <1>Cresia Consulting S.L.</1>",
-    "title": "Tu Entrenador de Voz IA se está calibrando.",
-    "status": {
-      "profile": "Perfil de usuario creado.",
-      "workspace": "Espacio de trabajo para <1>Cresia Consulting S.L.</1> configurado.",
-      "calibrating": "Calibrando modelos de IA con benchmarks de la industria.",
-      "analyzing": "Analizando patrones de comunicación de equipos de alto rendimiento.",
-      "generating": "Generando tus primeras métricas de Claridad Ejecutiva.",
-      "completed": "Completado",
-      "inProgress": "En Proceso...",
-      "pending": "Pendiente"
+    "welcome": "Bienvenida, {{name}}.",
+    "companyDashboard": "Dashboard de Rendimiento para {{company}}",
+    "userView": "Mi Vista (Consultor)",
+    "managerView": "Vista de Equipo (Mánager)",
+    "logout": "Cerrar Sesión",
+    "user": {
+      "brs": {
+        "title": "Business Readiness Score (BRS)"
+      },
+      "confidence": {
+        "title": "Nivel de Confianza en Pitches",
+        "ready": "Listo para Cliente"
+      },
+      "vocabulary": {
+        "title": "Dominio de Vocabulario Técnico"
+      },
+      "roadmap": {
+        "title": "Roadmap de Mejora",
+        "step1": "Completar módulo de 'Fonética Esencial'.",
+        "step2": "Reducir 'muletillas' en un 20%.",
+        "step3": "Practicar pitch de 'Regulatory Submission'."
+      },
+      "recordings": {
+        "title": "Mis Mejores Grabaciones"
+      }
     },
-    "info": "Este proceso inicial puede tardar varias horas. Queríamos darte un acceso anticipado para que vieras nuestro progreso.",
-    "nextSteps": "Recibirás un correo electrónico tan pronto como tu dashboard esté 100% operativo.",
-    "cta": "Entendido, volver a la página principal"
+    "manager": {
+      "brs": {
+        "title": "BRS Promedio del Equipo"
+      },
+      "practiceTime": {
+        "title": "Tiempo Total de Práctica"
+      },
+      "costSavings": {
+        "title": "Ahorro Estimado (vs. Tutor)",
+        "change": "Este trimestre"
+      },
+      "activeUsers": {
+        "title": "Usuarios Activos"
+      },
+      "teamPerformance": {
+        "title": "Rendimiento por Equipo"
+      },
+      "hesitationAnalysis": {
+        "title": "Análisis de 'Muletillas' (Global)"
+      }
+    },
+    "table": {
+        "team": "Equipo / Consultor",
+        "brs": "BRS",
+        "confidence": "Confianza",
+        "practiceHours": "Horas Práctica"
+    }
   }
 }
