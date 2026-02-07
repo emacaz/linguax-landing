@@ -114,6 +114,14 @@ export default {
         "frictionWord": "architecture",
         "tooltipAnalysis": "The syllable 'tec' was over-emphasized, breaking the natural flow of the sentence and distracting from the core message.",
         "tooltipImpact": "A disjointed delivery can make complex technical concepts seem confusing, raising doubts about the strategy."
+      },
+      "legal": {
+        "label": "Legal",
+        "context": "You are presenting a key argument before a judge. Say the following sentence with firmness:",
+        "phrase": "The precedent set by this case is incontrovertible.",
+        "frictionWord": "incontrovertible",
+        "tooltipAnalysis": "The syllable 'ver' was pronounced with a flattened intonation, reducing the emphasis on the word's core meaning of irrefutability.",
+        "tooltipImpact": "In a legal setting, a lack of phonetic conviction on a power word like 'incontrovertible' can be subconsciously interpreted by a judge or jury as a lack of confidence in the argument itself."
       }
     },
     "recording": {
