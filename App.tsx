@@ -7,6 +7,7 @@ import TrustedBy from './components/TrustedBy';
 import Features from './components/Features';
 import InteractiveWidget from './components/InteractiveWidget';
 import HowItWorks from './components/HowItWorks';
+import Pricing from './components/Pricing';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import FormModal from './components/FormModal';
@@ -20,6 +21,7 @@ const App: React.FC = () => {
     const [user, setUser] = useState<User | null>(null);
     const { i18n, t } = useTranslation();
     const interactiveWidgetRef = useRef<HTMLDivElement>(null);
+    const pricingRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         document.documentElement.lang = i18n.language;
@@ -34,6 +36,9 @@ const App: React.FC = () => {
     const handleCloseModal = () => setIsModalOpen(false);
     const handleScrollToDemo = () => {
         interactiveWidgetRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
+    const handleScrollToPricing = () => {
+        pricingRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
     const showLoginPage = () => setView('login');
     const showLandingPage = () => {
@@ -63,7 +68,7 @@ const App: React.FC = () => {
                 </div>
             </div>
             <div className="relative z-10">
-                <Header onOpenModal={handleOpenModal} onShowLogin={showLoginPage} />
+                <Header onOpenModal={handleOpenModal} onShowLogin={showLoginPage} onScrollToPricing={handleScrollToPricing} />
                 <main>
                     <Hero onOpenModal={handleOpenModal} onScrollToDemo={handleScrollToDemo} />
                     <div ref={interactiveWidgetRef}>
@@ -72,6 +77,9 @@ const App: React.FC = () => {
                     <TrustedBy />
                     <Features />
                     <HowItWorks />
+                    <div ref={pricingRef}>
+                        <Pricing onOpenModal={handleOpenModal} />
+                    </div>
                     <CTA onOpenModal={handleOpenModal} />
                 </main>
                 <Footer />
