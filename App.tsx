@@ -12,10 +12,12 @@ import Footer from './components/Footer';
 import FormModal from './components/FormModal';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
+import { User } from './components/dashboard/types';
 
 const App: React.FC = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const [view, setView] = useState<'landing' | 'login' | 'dashboard'>('landing');
+    const [user, setUser] = useState<User | null>(null);
     const { i18n, t } = useTranslation();
     const interactiveWidgetRef = useRef<HTMLDivElement>(null);
 
@@ -34,15 +36,22 @@ const App: React.FC = () => {
         interactiveWidgetRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
     const showLoginPage = () => setView('login');
-    const showLandingPage = () => setView('landing');
-    const showDashboardPage = () => setView('dashboard');
+    const showLandingPage = () => {
+        setView('landing');
+        setUser(null); // Clear user on logout/return to landing
+    };
+    
+    const handleLoginSuccess = (loggedInUser: User) => {
+        setUser(loggedInUser);
+        setView('dashboard');
+    };
 
     if (view === 'login') {
-        return <Login onShowLanding={showLandingPage} onShowDashboard={showDashboardPage} />;
+        return <Login onShowLanding={showLandingPage} onLoginSuccess={handleLoginSuccess} />;
     }
     
-    if (view === 'dashboard') {
-        return <Dashboard onShowLanding={showLandingPage} />;
+    if (view === 'dashboard' && user) {
+        return <Dashboard user={user} onLogout={showLandingPage} />;
     }
 
     return (
