@@ -2,7 +2,8 @@
 export default {
   "header": {
     "contact": "Contactar",
-    "login": "Iniciar Sesión"
+    "login": "Iniciar Sesión",
+    "pricing": "Precios"
   },
   "hero": {
     "title": "La Infraestructura de Voz IA para Equipos de Alto Rendimiento",
@@ -227,6 +228,75 @@ export default {
         "brs": "BRS",
         "confidence": "Confianza",
         "practiceHours": "Horas Práctica"
+    }
+  },
+  "pricing": {
+    "title": "Planes diseñados para tu crecimiento",
+    "subtitle": "Elige el plan que se adapta a la etapa actual de tu equipo y escala con nosotros.",
+    "monthly": "Mensual",
+    "annually": "Anual",
+    "save_annually": "Ahorra hasta 15%",
+    "per_user_per_month": "/ usuario / mes",
+    "billed_annually": "facturado anualmente",
+    "mostPopular": "Más Popular",
+    "starter": {
+      "name": "STARTER",
+      "valueProposition": "La herramienta esencial para que tu equipo de élite gane confianza y domine cada conversación.",
+      "userCount": "1 - 5 Usuarios",
+      "features": [
+        "Sesiones Ilimitadas (Modo Guiado)",
+        "Análisis de Fluidez Post-Sesión",
+        "Dashboard de Rendimiento Individual",
+        "Historial de Rendimiento (90 días)",
+        "Biblioteca de Contextos de Negocio Estándar",
+        "Soporte por Email"
+      ],
+      "cta": "Empezar"
+    },
+    "growth": {
+      "name": "GROWTH",
+      "valueProposition": "Equipa a tus managers con la visibilidad para convertir a un buen equipo en una fuerza de ventas imparable.",
+      "userCount": "6 - 20 Usuarios",
+      "features": [
+        "Todo lo del plan Starter, y además:",
+        "Dashboard de Manager (Vista de Equipo)",
+        "Análisis Comparativo de Miembros",
+        "Historial de Rendimiento Ilimitado",
+        "Creación de Contextos Personalizados",
+        "Soporte Prioritario por Email",
+        "Descuento por Facturación Anual (10%)"
+      ],
+      "cta": "Seleccionar Plan"
+    },
+    "business": {
+      "name": "BUSINESS",
+      "valueProposition": "Integra la excelencia en comunicación como un pilar estratégico de tu negocio.",
+      "userCount": "21 - 50 Usuarios",
+      "features": [
+        "Todo lo del plan Growth, y además:",
+        "Análisis Avanzado de Equipo",
+        "Roadmaps de Mejora (Impulsados por IA)",
+        "Branding Corporativo (Logo y Colores)",
+        "Manager de Cuenta Dedicado",
+        "Descuento por Facturación Anual (15%)"
+      ],
+      "cta": "Solicitar Demo"
+    },
+    "enterprise": {
+      "name": "ENTERPRISE",
+      "valueProposition": "Una solución a escala, segura y totalmente integrada para las exigencias de tu corporación.",
+      "userCount": "+50 Usuarios",
+      "price": "Personalizado",
+      "features": [
+        "Todo lo del plan Business, y además:",
+        "Integración SSO (SAML, Okta, etc.)",
+        "Acceso a la API",
+        "Auditorías de Seguridad y Cumplimiento",
+        "Onboarding y Formación Personalizada",
+        "Creación de Contenido a Medida (Bespoke)",
+        "Acuerdo de Nivel de Servicio (SLA)"
+      ],
+      "cta": "Contactar a Ventas"
     }
   }
 }

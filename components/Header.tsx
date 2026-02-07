@@ -5,9 +5,10 @@ import { useTranslation } from 'react-i18next';
 interface HeaderProps {
     onOpenModal: () => void;
     onShowLogin: () => void;
+    onScrollToPricing: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onOpenModal, onShowLogin }) => {
+const Header: React.FC<HeaderProps> = ({ onOpenModal, onShowLogin, onScrollToPricing }) => {
     const { t, i18n } = useTranslation();
 
     const changeLanguage = (lng: string) => {
@@ -38,6 +39,12 @@ const Header: React.FC<HeaderProps> = ({ onOpenModal, onShowLogin }) => {
                                 EN
                             </button>
                         </div>
+                        <button
+                            onClick={onScrollToPricing}
+                            className="hidden sm:inline-block text-sm text-gray-400 hover:text-white font-semibold transition-colors duration-300"
+                        >
+                            {t('header.pricing')}
+                        </button>
                         <button
                             onClick={onShowLogin}
                             className="text-sm text-gray-400 hover:text-white font-semibold transition-colors duration-300"

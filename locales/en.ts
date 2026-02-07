@@ -2,7 +2,8 @@
 export default {
   "header": {
     "contact": "Contact",
-    "login": "Login"
+    "login": "Login",
+    "pricing": "Pricing"
   },
   "hero": {
     "title": "The AI Voice Infrastructure for High-Performance Teams",
@@ -227,6 +228,75 @@ export default {
         "brs": "BRS",
         "confidence": "Confidence",
         "practiceHours": "Practice Hours"
+    }
+  },
+  "pricing": {
+    "title": "Plans designed for your growth",
+    "subtitle": "Choose the plan that fits your team's current stage and scale with us.",
+    "monthly": "Monthly",
+    "annually": "Annually",
+    "save_annually": "Save up to 15%",
+    "per_user_per_month": "/ user / month",
+    "billed_annually": "billed annually",
+    "mostPopular": "Most Popular",
+    "starter": {
+      "name": "STARTER",
+      "valueProposition": "The essential tool for your elite team to gain confidence and master every conversation.",
+      "userCount": "1 - 5 Users",
+      "features": [
+        "Unlimited Sessions (Guided Mode)",
+        "Post-Session Fluency Analysis",
+        "Individual Performance Dashboard",
+        "Performance History (90 days)",
+        "Standard Business Context Library",
+        "Email Support"
+      ],
+      "cta": "Get Started"
+    },
+    "growth": {
+      "name": "GROWTH",
+      "valueProposition": "Equip your managers with the visibility to turn a good team into an unstoppable sales force.",
+      "userCount": "6 - 20 Users",
+      "features": [
+        "Everything in Starter, plus:",
+        "Manager Dashboard (Team View)",
+        "Comparative Member Analysis",
+        "Unlimited Performance History",
+        "Custom Training Context Creation",
+        "Priority Email Support",
+        "Annual Billing Discount (10%)"
+      ],
+      "cta": "Select Plan"
+    },
+    "business": {
+      "name": "BUSINESS",
+      "valueProposition": "Integrate communication excellence as a strategic pillar of your business.",
+      "userCount": "21 - 50 Users",
+      "features": [
+        "Everything in Growth, plus:",
+        "Advanced Team Analytics",
+        "AI-Powered Improvement Roadmaps",
+        "Corporate Branding (Logo & Colors)",
+        "Dedicated Account Manager",
+        "Annual Billing Discount (15%)"
+      ],
+      "cta": "Request Demo"
+    },
+    "enterprise": {
+      "name": "ENTERPRISE",
+      "valueProposition": "A scalable, secure, and fully integrated solution for your corporation's demands.",
+      "userCount": "50+ Users",
+      "price": "Custom",
+      "features": [
+        "Everything in Business, plus:",
+        "SSO Integration (SAML, Okta, etc.)",
+        "API Access",
+        "Security and Compliance Audits",
+        "Custom Onboarding and Training",
+        "Bespoke Content Creation",
+        "Service Level Agreement (SLA)"
+      ],
+      "cta": "Contact Sales"
     }
   }
 }
