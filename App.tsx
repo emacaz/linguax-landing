@@ -11,14 +11,9 @@ import Pricing from './components/Pricing';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import FormModal from './components/FormModal';
-import Login from './components/Login';
-import Dashboard from './components/Dashboard';
-import { User } from './components/dashboard/types';
 
 const App: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-    const [view, setView] = useState<'landing' | 'login' | 'dashboard'>('landing');
-    const [user, setUser] = useState<User | null>(null);
     const { i18n, t } = useTranslation();
     const interactiveWidgetRef = useRef<HTMLDivElement>(null);
     const pricingRef = useRef<HTMLDivElement>(null);
@@ -40,24 +35,6 @@ const App: React.FC = () => {
     const handleScrollToPricing = () => {
         pricingRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
-    const showLoginPage = () => setView('login');
-    const showLandingPage = () => {
-        setView('landing');
-        setUser(null); // Clear user on logout/return to landing
-    };
-    
-    const handleLoginSuccess = (loggedInUser: User) => {
-        setUser(loggedInUser);
-        setView('dashboard');
-    };
-
-    if (view === 'login') {
-        return <Login onShowLanding={showLandingPage} onLoginSuccess={handleLoginSuccess} />;
-    }
-    
-    if (view === 'dashboard' && user) {
-        return <Dashboard user={user} onLogout={showLandingPage} />;
-    }
 
     return (
         <div className="bg-[#05050A] text-white">
@@ -68,7 +45,7 @@ const App: React.FC = () => {
                 </div>
             </div>
             <div className="relative z-10">
-                <Header onOpenModal={handleOpenModal} onShowLogin={showLoginPage} onScrollToPricing={handleScrollToPricing} />
+                <Header onOpenModal={handleOpenModal} onScrollToPricing={handleScrollToPricing} />
                 <main>
                     <Hero onOpenModal={handleOpenModal} onScrollToDemo={handleScrollToDemo} />
                     <div ref={interactiveWidgetRef}>
