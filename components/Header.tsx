@@ -4,11 +4,10 @@ import { useTranslation } from 'react-i18next';
 
 interface HeaderProps {
     onOpenModal: () => void;
-    onShowLogin: () => void;
     onScrollToPricing: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onOpenModal, onShowLogin, onScrollToPricing }) => {
+const Header: React.FC<HeaderProps> = ({ onOpenModal, onScrollToPricing }) => {
     const { t, i18n } = useTranslation();
 
     const changeLanguage = (lng: string) => {
@@ -45,12 +44,14 @@ const Header: React.FC<HeaderProps> = ({ onOpenModal, onShowLogin, onScrollToPri
                         >
                             {t('header.pricing')}
                         </button>
-                        <button
-                            onClick={onShowLogin}
+                        <a
+                            href="https://linguax-ai.web.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="text-sm text-gray-400 hover:text-white font-semibold transition-colors duration-300"
                         >
                             {t('header.login')}
-                        </button>
+                        </a>
                         <button
                             onClick={onOpenModal}
                             className="hidden sm:inline-block bg-transparent border border-gray-700 text-white font-semibold py-2 px-6 rounded-lg hover:bg-gray-800 transition-colors duration-300"
