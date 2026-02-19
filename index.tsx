@@ -1,6 +1,6 @@
-
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './i18n'; // Initialize i18next
 
@@ -12,8 +12,14 @@ if (!rootElement) {
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <Suspense fallback="Loading...">
-      <App />
-    </Suspense>
+    <BrowserRouter>
+      <Suspense fallback={
+        <div className="flex items-center justify-center h-screen bg-[#05050A] text-white">
+          Loading...
+        </div>
+      }>
+        <App />
+      </Suspense>
+    </BrowserRouter>
   </React.StrictMode>
 );

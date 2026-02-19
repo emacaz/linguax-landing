@@ -1,9 +1,9 @@
-
 export default {
   "header": {
     "contact": "Contactar",
     "login": "Iniciar Sesión",
-    "pricing": "Precios"
+    "pricing": "Precios",
+    "forProfessionals": "Para Profesionales"
   },
   "hero": {
     "title": "La Infraestructura de Voz IA para Equipos de Alto Rendimiento",
@@ -305,6 +305,68 @@ export default {
         "Acuerdo de Nivel de Servicio (SLA)"
       ],
       "cta": "Contactar a Ventas"
+    }
+  },
+  "proPage": {
+    "pageTitle": "LinguaX Pro | Entrena tu fluidez profesional",
+    "pageDescription": "Deja de aprender inglés y empieza a entrenar tu fluidez en escenarios profesionales reales con IA. Gana la confianza para liderar reuniones, negociar y avanzar en tu carrera global.",
+    "pain": {
+      "title": "El inglés no te falta. Te falta fluidez en escenarios reales.",
+      "subtitle": "¿Reconoces esa pausa de 0.5 segundos antes de hablar en una reunión importante? Ese es el sonido de una oportunidad perdida.",
+      "microPain1": "La idea brillante que no compartiste por miedo a no encontrar las palabras.",
+      "microPain2": "La entrevista de trabajo global que sentiste que podrías haber clavado.",
+      "microPain3": "La negociación en la que cediste terreno por no poder argumentar con autoridad.",
+      "microPain4": "El sentimiento de ser 'el que menos habla' en un equipo internacional."
+    },
+    "differentiation": {
+      "title": "No es un curso. No es teoría. Es entrenamiento conversacional con IA.",
+      "subtitle": "Deja de coleccionar certificados. Empieza a coleccionar victorias profesionales.",
+      "feature1": {
+        "title": "Privado y Seguro",
+        "description": "Practica el pitch de ventas 50 veces. Negocia tu aumento de sueldo 100 veces. Sin juicios. Solo tú y la IA."
+      },
+      "feature2": {
+        "title": "Contexto Real",
+        "description": "No aprendas a 'pedir un café'. Entrena para presentar un roadmap de producto o debatir proyecciones financieras."
+      },
+      "feature3": {
+        "title": "Tecnología de Élite",
+        "description": "Accede a la misma IA de voz que usan los equipos de Fortune 500 para prepararse para llamadas de millones de dólares."
+      }
+    },
+    "result": {
+      "title": "Reuniones sin bloqueo. Empleos globales a tu alcance. Negociaciones con confianza.",
+      "testimonial1": "\"Antes, preparaba el contenido. Ahora, entreno mi convicción. LinguaX fue el puente.\" – Ana S., Product Manager",
+      "testimonial2": "\"Pasé de ser un oyente en las reuniones globales a ser quien las dirige. El cambio fue en menos de 3 meses.\" – Carlos G., Senior Consultant"
+    },
+    "scholarships": {
+      "title": "No ofrecemos descuentos. Invertimos en talento.",
+      "description": "Ofrecemos {slots} Becas 'Career Accelerator' este trimestre. No son para todo el mundo. Son para profesionales 100% comprometidos con su crecimiento. Si eres tú, aplica.",
+      "cta": "Aplicar a la Beca (Quedan {slots} cupos)"
+    },
+    "pricing": {
+      "title": "Tu Inversión en Crecimiento Profesional",
+      "monthly": {
+        "name": "Plan Mensual",
+        "price": "$67 USD",
+        "originalPrice": "normal $93",
+        "cta": "Empezar a Entrenar"
+      },
+      "annual": {
+        "name": "Plan Anual",
+        "tag": "Más Popular",
+        "price": "$597 USD",
+        "equivalent": "Equivale a $49/mes",
+        "originalPrice": "normal $1,116",
+        "cta": "Máximo Ahorro y Compromiso"
+      },
+      "lifetime": {
+        "title": "Oferta para Fundadores: Acceso de por Vida",
+        "description": "Solo para los primeros que se unan a nuestra comunidad Pro. Acceso ilimitado a LinguaX Pro, para siempre. Un único pago.",
+        "price": "$1,290",
+        "cta": "Convertirme en Fundador",
+        "offerEnds": "La oferta termina en:"
+      }
     }
   }
 }
