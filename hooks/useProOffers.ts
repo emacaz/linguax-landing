@@ -18,7 +18,7 @@ export const useProOffers = () => {
       const endDate = new Date(now.getTime() + 24 * 60 * 60 * 1000); // 24 hours from now
 
       const mockData: OfferStatus = {
-        isScholarshipVisible: true,
+        isScholarshipVisible: false,
         scholarshipSlots: 10,
         isLifetimeVisible: true,
         lifetimeEndDate: endDate.toISOString(),

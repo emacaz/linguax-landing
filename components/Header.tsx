@@ -24,7 +24,8 @@ const Header: React.FC<HeaderProps> = ({ onOpenModal, onScrollToPricing }) => {
                         </span>
                     </Link>
                     <div className="flex items-center space-x-6">
-                        <div className="hidden md:flex items-center space-x-1 border border-gray-700 rounded-lg p-1">
+                        <div className="flex items-center space-x-1 border border-gray-700 rounded-lg p-1">
+                        {/* <div className="hidden md:flex items-center space-x-1 border border-gray-700 rounded-lg p-1"> */}
                             <button
                                 onClick={() => changeLanguage('es')}
                                 className={`px-3 py-1 text-sm font-semibold rounded-md transition-colors duration-200 ${i18n.language.startsWith('es') ? 'bg-violet-600 text-white' : 'text-gray-400 hover:text-white'}`}
@@ -38,12 +39,12 @@ const Header: React.FC<HeaderProps> = ({ onOpenModal, onScrollToPricing }) => {
                                 EN
                             </button>
                         </div>
-                        <Link
+                        {/* <Link
                             to="/pro"
                             className="text-sm text-violet-400 hover:text-violet-300 font-semibold transition-colors duration-300"
                         >
                             {t('header.forProfessionals')}
-                        </Link>
+                        </Link> */}
                         <button
                             onClick={onScrollToPricing}
                             className="hidden sm:inline-block text-sm text-gray-400 hover:text-white font-semibold transition-colors duration-300"

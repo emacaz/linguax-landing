@@ -341,8 +341,8 @@ export default {
     },
     "scholarships": {
       "title": "We don't offer discounts. We invest in talent.",
-      "description": "We're offering {slots} 'Career Accelerator' Scholarships this quarter. They are for professionals 100% committed to their growth. If that's you, apply.",
-      "cta": "Apply for Scholarship ({slots} slots left)"
+      "description": "We're offering {{slots}} 'Career Accelerator' Scholarships this quarter. They are for professionals 100% committed to their growth. If that's you, apply.",
+      "cta": "Apply for Scholarship ({{slots}} slots left)"
     },
     "pricing": {
       "title": "Your Investment in Professional Growth",

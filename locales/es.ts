@@ -341,8 +341,8 @@ export default {
     },
     "scholarships": {
       "title": "No ofrecemos descuentos. Invertimos en talento.",
-      "description": "Ofrecemos {slots} Becas 'Career Accelerator' este trimestre. No son para todo el mundo. Son para profesionales 100% comprometidos con su crecimiento. Si eres tú, aplica.",
-      "cta": "Aplicar a la Beca (Quedan {slots} cupos)"
+      "description": "Ofrecemos {{slots}} Becas 'Career Accelerator' este trimestre. No son para todo el mundo. Son para profesionales 100% comprometidos con su crecimiento. Si eres tú, aplica.",
+      "cta": "Aplicar a la Beca (Quedan {{slots}} cupos)"
     },
     "pricing": {
       "title": "Tu Inversión en Crecimiento Profesional",
