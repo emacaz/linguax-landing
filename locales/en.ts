@@ -1,9 +1,9 @@
-
 export default {
   "header": {
     "contact": "Contact",
     "login": "Login",
-    "pricing": "Pricing"
+    "pricing": "Pricing",
+    "forProfessionals": "For Professionals"
   },
   "hero": {
     "title": "The AI Voice Infrastructure for High-Performance Teams",
@@ -305,6 +305,68 @@ export default {
         "Service Level Agreement (SLA)"
       ],
       "cta": "Contact Sales"
+    }
+  },
+  "proPage": {
+    "pageTitle": "LinguaX Pro | Train Your Professional Fluency",
+    "pageDescription": "Stop learning English and start training your fluency in real professional scenarios with AI. Gain the confidence to lead meetings, negotiate, and advance in your global career.",
+    "pain": {
+      "title": "You don't lack English. You lack fluency in real-world scenarios.",
+      "subtitle": "Do you recognize that 0.5-second pause before speaking in an important meeting? That's the sound of a missed opportunity.",
+      "microPain1": "The brilliant idea you didn't share for fear of not finding the words.",
+      "microPain2": "The global job interview you felt you could have nailed.",
+      "microPain3": "The negotiation where you gave ground because you couldn't argue with authority.",
+      "microPain4": "The feeling of being 'the quiet one' on an international team."
+    },
+    "differentiation": {
+      "title": "It's not a course. It's not theory. It's conversational training with AI.",
+      "subtitle": "Stop collecting certificates. Start collecting professional victories.",
+      "feature1": {
+        "title": "Private & Safe",
+        "description": "Practice your sales pitch 50 times. Negotiate your raise 100 times. No judgment. Just you and the AI."
+      },
+      "feature2": {
+        "title": "Real Context",
+        "description": "Don't learn to 'order coffee'. Train to present a product roadmap or debate financial projections."
+      },
+      "feature3": {
+        "title": "Elite Technology",
+        "description": "Access the same voice AI that Fortune 500 teams use to prepare for multi-million dollar calls."
+      }
+    },
+    "result": {
+      "title": "Meetings without freezing. Global jobs within reach. Negotiations with confidence.",
+      "testimonial1": "\"Before, I prepared the content. Now, I train my conviction. LinguaX was the bridge.\" – Ana S., Product Manager",
+      "testimonial2": "\"I went from being a listener in global meetings to leading them. The change happened in less than 3 months.\" – Carlos G., Senior Consultant"
+    },
+    "scholarships": {
+      "title": "We don't offer discounts. We invest in talent.",
+      "description": "We're offering {{slots}} 'Career Accelerator' Scholarships this quarter. They are for professionals 100% committed to their growth. If that's you, apply.",
+      "cta": "Apply for Scholarship ({{slots}} slots left)"
+    },
+    "pricing": {
+      "title": "Your Investment in Professional Growth",
+      "monthly": {
+        "name": "Monthly Plan",
+        "price": "$67 USD",
+        "originalPrice": "normally $93",
+        "cta": "Start Training"
+      },
+      "annual": {
+        "name": "Annual Plan",
+        "tag": "Most Popular",
+        "price": "$597 USD",
+        "equivalent": "Equals $49/mo",
+        "originalPrice": "normally $1,116",
+        "cta": "Maximum Savings & Commitment"
+      },
+      "lifetime": {
+        "title": "Founder's Offer: Lifetime Access",
+        "description": "Only for the first to join our Pro community. Unlimited access to LinguaX Pro, forever. A single payment.",
+        "price": "$1,290",
+        "cta": "Become a Founder",
+        "offerEnds": "Offer ends in:"
+      }
     }
   }
 }
