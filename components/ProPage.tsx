@@ -157,7 +157,7 @@ const ProPage: React.FC = () => {
                                     </div>
 
                                      {/* Lifetime Offer */}
-                                    {offers.isLifetimeVisible && (
+                                    {/* {offers.isLifetimeVisible && (
                                         <div className="mt-16 max-w-4xl mx-auto p-8 rounded-2xl bg-gradient-to-r from-gray-800 via-gray-900 to-black border border-gray-700">
                                             <div className="text-center">
                                                 <h3 className="text-2xl font-bold text-white">{t('proPage.pricing.lifetime.title')}</h3>
@@ -171,7 +171,7 @@ const ProPage: React.FC = () => {
                                                 </a>
                                             </div>
                                         </div>
-                                    )}
+                                    )} */}
                                 </>
                              )}
                         </div>
