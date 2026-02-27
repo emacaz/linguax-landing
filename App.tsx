@@ -4,7 +4,6 @@ import { Routes, Route } from 'react-router-dom';
 const LandingPage = lazy(() => import('./components/LandingPage'));
 const ProPage = lazy(() => import('./components/ProPage'));
 const SpringPage = lazy(() => import('./components/SpringPage'));
-const SpringImagePage = lazy(() => import('./components/SpringImagePage'));
 
 const App: React.FC = () => {
     return (
