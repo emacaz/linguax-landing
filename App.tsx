@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 
 const LandingPage = lazy(() => import('./components/LandingPage'));
 const ProPage = lazy(() => import('./components/ProPage'));
+const SpringPage = lazy(() => import('./components/SpringPage'));
+const SpringImagePage = lazy(() => import('./components/SpringImagePage'));
 
 const App: React.FC = () => {
     return (
@@ -10,6 +12,8 @@ const App: React.FC = () => {
             <Routes>
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/pro" element={<ProPage />} />
+                <Route path="/spring" element={<SpringPage />} />
+                
             </Routes>
         </Suspense>
     );
