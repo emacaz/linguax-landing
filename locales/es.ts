@@ -6,7 +6,7 @@ export default {
     "forProfessionals": "Para Profesionales"
   },
   "hero": {
-    "title": "Entrena tu Voz con IA para cerrar negocios en Inglés sin peder años en academias",
+    "title": "Entrena tu Voz con IA para cerrar negocios en Inglés sin perder años en academias",
     "subtitle": "Elimina la barrera del idioma en tus operaciones. Nuestra IA entrena la fluidez y autoridad de su equipo en tiempo real.",
     "cta": "Probar Demo Gratis",
     "independentCta": "Soy Independiente"
@@ -311,13 +311,40 @@ export default {
   "proPage": {
     "pageTitle": "LinguaX Pro | Entrena tu fluidez profesional",
     "pageDescription": "Deja de aprender inglés y empieza a entrenar tu fluidez en escenarios profesionales reales con IA. Gana la confianza para liderar reuniones, negociar y avanzar en tu carrera global.",
+    "hero": {
+      "title": "Tu siguiente oportunidad depende de tu inglés. LinguaX te lo entrena.",
+      "subtitle": "Resulta que no te falta inglés. Te falta confianza para hablar bajo presión.",
+      "careerBuilder": "Busco Trabajo",
+      "industryExpert": "Mejorar mi Sector"
+    },
+    "qualify": {
+      "title": "¿Es LinguaX Pro para ti?",
+      "subtitle": "Verifica si encajas en el programa antes de empezar.",
+      "youAreIfLabel": "Es para ti si:",
+      "youAreIf1": "Eres PM, Ingeniero, Consultor, Emprendedor o Ejecutivo",
+      "youAreIf2": "Tu inglés es B1–C1 (intermedio a avanzado)",
+      "youAreIf3": "Necesitas inglés para tu carrera o negocio",
+      "youAreIf4": "Tienes 20–60 minutos por semana para entrenar",
+      "notForYouLabel": "NO es para ti si:",
+      "notForYou1": "Estás aprendiendo inglés desde cero",
+      "notForYou2": "Buscas un curso masivo de gramática",
+      "notForYou3": "Quieres estudiar 'recreativamente'"
+    },
     "pain": {
-      "title": "El inglés no te falta. Te falta fluidez en escenarios reales.",
-      "subtitle": "¿Reconoces esa pausa de 0.5 segundos antes de hablar en una reunión importante? Ese es el sonido de una oportunidad perdida.",
-      "microPain1": "La idea brillante que no compartiste por miedo a no encontrar las palabras.",
-      "microPain2": "La entrevista de trabajo global que sentiste que podrías haber clavado.",
-      "microPain3": "La negociación en la que cediste terreno por no poder argumentar con autoridad.",
-      "microPain4": "El sentimiento de ser 'el que menos habla' en un equipo internacional."
+      "careerBuilder": {
+        "title": "¿Buscas trabajo internacional? El inglés es tu barrera.",
+        "pain1": "Trabajos remotos: €5k–€15k/mes (pero tu inglés los veta)",
+        "pain2": "Entrevistas FANG: 100% en inglés, sin opción de español",
+        "pain3": "Saltos salariales: 100%+ en primera oferta internacional, pero necesitas pasar la entrevista",
+        "pain4": "Imposter syndrome: Otros hablan con confianza, tú con dudas"
+      },
+      "industryExpert": {
+        "title": "Experto en tu sector, pero tu inglés no refleja tu nivel.",
+        "pain1": "Negocias en español, cierras menos. En inglés, suenas genérico.",
+        "pain2": "Tu presentación técnica pierde precisión cuando cambias de idioma",
+        "pain3": "El cliente espera confianza. Tú suenas inseguro en inglés.",
+        "pain4": "Dejas dinero en la mesa porque no negocias en su idioma"
+      }
     },
     "differentiation": {
       "title": "No es un curso. No es teoría. Es entrenamiento conversacional con IA.",
@@ -336,9 +363,31 @@ export default {
       }
     },
     "result": {
-      "title": "Reuniones sin bloqueo. Empleos globales a tu alcance. Negociaciones con confianza.",
-      "testimonial1": "\"Antes, preparaba el contenido. Ahora, entreno mi convicción. LinguaX fue el puente.\" – Ana S., Product Manager",
-      "testimonial2": "\"Pasé de ser un oyente en las reuniones globales a ser quien las dirige. El cambio fue en menos de 3 meses.\" – Carlos G., Senior Consultant"
+      "title": "Historias de profesionales que transformaron su carrera.",
+      "careerBuilder": {
+        "name": "María L.",
+        "role": "Colombia → Ciklum (UK Remote)",
+        "impact": "Pasé de freelancer local ($2k/mes) a Senior Consultant remoto en UK ($8k/mes). LinguaX fue el puente en entrevistas y videoconferencias.",
+        "metric": "4x aumento salarial en 6 meses"
+      },
+      "industryExpert": {
+        "name": "David P.",
+        "role": "CFO - Textilera Peru",
+        "impact": "Renegocié un contrato con supplier asiático en inglés y gané 15% en términos. La confianza fonética hizo la diferencia.",
+        "metric": "$2.8M+ recuperados en una negociación"
+      }
+    },
+    "industries": {
+      "title": "Especializados en tu industria.",
+      "subtitle": "LinguaX soporta contextos específicos para Tech, Finanzas, Legal, Healthcare, Manufacturing, Consulting y más.",
+      "tech": "Tech & Product",
+      "finance": "Finance & Inversión",
+      "legal": "Legal & Compliance",
+      "healthcare": "Healthcare & Pharma",
+      "manufacturing": "Manufacturing & Supply Chain",
+      "consulting": "Consulting & Strategy",
+      "sales": "Sales & Business Dev",
+      "cta": "Ver escenarios específicos para tu sector"
     },
     "scholarships": {
       "title": "No ofrecemos descuentos. Invertimos en talento.",

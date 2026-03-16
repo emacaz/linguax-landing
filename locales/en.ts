@@ -311,13 +311,40 @@ export default {
   "proPage": {
     "pageTitle": "LinguaX Pro | Train Your Professional Fluency",
     "pageDescription": "Stop learning English and start training your fluency in real professional scenarios with AI. Gain the confidence to lead meetings, negotiate, and advance in your global career.",
+    "hero": {
+      "title": "Your next opportunity depends on your English. LinguaX trains it.",
+      "subtitle": "Turns out you don't lack English. You lack confidence to speak under pressure.",
+      "careerBuilder": "I'm Looking for Work",
+      "industryExpert": "Improve My Industry"
+    },
+    "qualify": {
+      "title": "Is LinguaX Pro for you?",
+      "subtitle": "Verify if you fit before you start.",
+      "youAreIfLabel": "You are if:",
+      "youAreIf1": "You're a PM, Engineer, Consultant, Entrepreneur, or Executive",
+      "youAreIf2": "Your English is B1–C1 (intermediate to advanced)",
+      "youAreIf3": "You need English for your career or business",
+      "youAreIf4": "You have 20–60 minutes per week to train",
+      "notForYouLabel": "NOT for you if:",
+      "notForYou1": "You're learning English from scratch",
+      "notForYou2": "You want a massive grammar course",
+      "notForYou3": "You want to study 'recreationally'"
+    },
     "pain": {
-      "title": "You don't lack English. You lack fluency in real-world scenarios.",
-      "subtitle": "Do you recognize that 0.5-second pause before speaking in an important meeting? That's the sound of a missed opportunity.",
-      "microPain1": "The brilliant idea you didn't share for fear of not finding the words.",
-      "microPain2": "The global job interview you felt you could have nailed.",
-      "microPain3": "The negotiation where you gave ground because you couldn't argue with authority.",
-      "microPain4": "The feeling of being 'the quiet one' on an international team."
+      "careerBuilder": {
+        "title": "Looking for international work? English is your barrier.",
+        "pain1": "Remote jobs: $5k–$15k/month (but your English bars you)",
+        "pain2": "FANG interviews: 100% in English, no Spanish option",
+        "pain3": "Salary jumps: 100%+ in first international offer, but you need to pass the interview",
+        "pain4": "Imposter syndrome: Others speak confidently, you with doubt"
+      },
+      "industryExpert": {
+        "title": "Expert in your field, but your English doesn't reflect your level.",
+        "pain1": "You negotiate in Spanish, close less. In English, you sound generic.",
+        "pain2": "Your technical presentation loses precision when you switch languages",
+        "pain3": "The client expects confidence. You sound uncertain in English.",
+        "pain4": "You leave money on the table because you don't negotiate in their language"
+      }
     },
     "differentiation": {
       "title": "It's not a course. It's not theory. It's conversational training with AI.",
@@ -336,9 +363,31 @@ export default {
       }
     },
     "result": {
-      "title": "Meetings without freezing. Global jobs within reach. Negotiations with confidence.",
-      "testimonial1": "\"Before, I prepared the content. Now, I train my conviction. LinguaX was the bridge.\" – Ana S., Product Manager",
-      "testimonial2": "\"I went from being a listener in global meetings to leading them. The change happened in less than 3 months.\" – Carlos G., Senior Consultant"
+      "title": "Stories of professionals who transformed their careers.",
+      "careerBuilder": {
+        "name": "Maria L.",
+        "role": "Colombia → Ciklum (UK Remote)",
+        "impact": "Went from local freelancer ($2k/month) to Senior Consultant remote in UK ($8k/month). LinguaX was the bridge in interviews and video calls.",
+        "metric": "4x salary increase in 6 months"
+      },
+      "industryExpert": {
+        "name": "David P.",
+        "role": "CFO - Peru Textile Company",
+        "impact": "Renegotiated an Asian supplier contract in English and won 15% better terms. Phonetic confidence made the difference.",
+        "metric": "$2.8M+ recovered in one negotiation"
+      }
+    },
+    "industries": {
+      "title": "Specialized for your industry.",
+      "subtitle": "LinguaX supports specific contexts for Tech, Finance, Legal, Healthcare, Manufacturing, Consulting, and more.",
+      "tech": "Tech & Product",
+      "finance": "Finance & Investment",
+      "legal": "Legal & Compliance",
+      "healthcare": "Healthcare & Pharma",
+      "manufacturing": "Manufacturing & Supply Chain",
+      "consulting": "Consulting & Strategy",
+      "sales": "Sales & Business Dev",
+      "cta": "View specific scenarios for your industry"
     },
     "scholarships": {
       "title": "We don't offer discounts. We invest in talent.",
