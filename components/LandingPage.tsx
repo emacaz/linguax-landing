@@ -46,7 +46,7 @@ const LandingPage: React.FC = () => {
             <div className="relative z-10">
                 <Header onOpenModal={handleOpenModal} onScrollToPricing={handleScrollToPricing} />
                 <main>
-                    <Hero onOpenModal={handleOpenModal} onScrollToDemo={handleScrollToDemo} />
+                    <Hero onScrollToDemo={handleScrollToDemo} />
                     <div ref={interactiveWidgetRef}>
                         <InteractiveWidget onOpenModal={handleOpenModal} />
                     </div>

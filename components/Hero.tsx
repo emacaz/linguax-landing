@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 const VoiceWave: React.FC = () => (
     <div className="relative w-full max-w-2xl mx-auto h-48 flex items-center justify-center">
@@ -40,12 +41,12 @@ const VoiceWave: React.FC = () => (
 );
 
 interface HeroProps {
-    onOpenModal: () => void;
     onScrollToDemo: () => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ onOpenModal, onScrollToDemo }) => {
+const Hero: React.FC<HeroProps> = ({ onScrollToDemo }) => {
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
     return (
         <section className="py-24 sm:py-32">
@@ -64,10 +65,10 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal, onScrollToDemo }) => {
                         {t('hero.cta')}
                     </button>
                     <button
-                        onClick={onOpenModal}
+                        onClick={() => navigate('/pro')}
                         className="w-full sm:w-auto bg-transparent border border-gray-700 text-white font-semibold py-3 px-8 rounded-lg hover:bg-gray-800 transition-colors duration-300"
                     >
-                        {t('header.contact')}
+                        {t('hero.independentCta')}
                     </button>
                 </div>
                 <div className="mt-15">
