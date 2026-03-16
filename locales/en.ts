@@ -6,9 +6,10 @@ export default {
     "forProfessionals": "For Professionals"
   },
   "hero": {
-    "title": "The AI Voice Infrastructure for High-Performance Teams",
-    "subtitle": "We transform your sales and support team's communication with real-time, AI-powered voice coaching.",
-    "cta": "Try Demo for Free"
+    "title": "Train Your Voice with AI to close deals in English without losing years in academies",
+    "subtitle": "Break the language barrier in your global operations. Our AI trains your team’s fluency and authority in real-time.",
+    "cta": "Try Demo for Free",
+    "independentCta": "I'm Independent"
   },
   "trustedBy": {
     "title": "Powering the most demanding teams"

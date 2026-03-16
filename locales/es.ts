@@ -6,9 +6,10 @@ export default {
     "forProfessionals": "Para Profesionales"
   },
   "hero": {
-    "title": "La Infraestructura de Voz IA para Equipos de Alto Rendimiento",
-    "subtitle": "Transformamos la comunicación de su equipo de ventas y soporte con entrenamiento de voz en tiempo real, impulsado por IA.",
-    "cta": "Probar Demo Gratis"
+    "title": "Entrena tu Voz con IA para cerrar negocios en Inglés sin peder años en academias",
+    "subtitle": "Elimina la barrera del idioma en tus operaciones. Nuestra IA entrena la fluidez y autoridad de su equipo en tiempo real.",
+    "cta": "Probar Demo Gratis",
+    "independentCta": "Soy Independiente"
   },
   "trustedBy": {
     "title": "Impulsando a los equipos más exigentes"
