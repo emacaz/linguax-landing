@@ -314,8 +314,8 @@ export default {
     "hero": {
       "title": "Your next opportunity depends on your English. LinguaX trains it.",
       "subtitle": "Turns out you don't lack English. You lack confidence to speak under pressure.",
-      "careerBuilder": "I'm Looking for Work",
-      "industryExpert": "Improve My Industry"
+      "onboardingCta": "See My Professional English",
+      "onboardingHint": "Analyze your professional English level in 15 seconds"
     },
     "qualify": {
       "title": "Is LinguaX Pro for you?",
@@ -418,5 +418,23 @@ export default {
         "offerEnds": "Offer ends in:"
       }
     }
+  },
+  "proOnboarding": {
+    "pageTitle": "LinguaX Pro | Professional Onboarding",
+    "pageDescription": "Quick onboarding for professionals and independents before your 15-second professional English analysis.",
+    "stepLabel": "Step 1 of 3",
+    "title": "Let's tailor your professional onboarding",
+    "subtitle": "Choose your profile so we can personalize your next steps.",
+    "question": "How do you work today?",
+    "professional": {
+      "title": "Professional",
+      "description": "I work inside a company team."
+    },
+    "independent": {
+      "title": "Independent",
+      "description": "I work as a freelancer, consultant, or founder."
+    },
+    "microcopy": "In the next step, you'll analyze your professional English level in 15 seconds.",
+    "continueCta": "Continue"
   }
 }

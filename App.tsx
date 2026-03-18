@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 const LandingPage = lazy(() => import('./components/LandingPage'));
 const ProPage = lazy(() => import('./components/ProPage'));
+const ProOnboardingPage = lazy(() => import('./components/ProOnboardingPage'));
 const SpringPage = lazy(() => import('./components/SpringPage'));
 
 const App: React.FC = () => {
@@ -11,6 +12,7 @@ const App: React.FC = () => {
             <Routes>
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/pro" element={<ProPage />} />
+                <Route path="/pro/onboarding" element={<ProOnboardingPage />} />
                 <Route path="/spring" element={<SpringPage />} />
                 
             </Routes>

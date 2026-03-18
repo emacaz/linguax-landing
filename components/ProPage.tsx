@@ -11,7 +11,7 @@ type ProfileType = 'careerBuilder' | 'industryExpert';
 const ProPage: React.FC = () => {
     const { t, i18n } = useTranslation();
     const { isLoading, offers } = useProOffers();
-    const [selectedProfile, setSelectedProfile] = useState<ProfileType>('careerBuilder');
+    const [selectedProfile] = useState<ProfileType>('careerBuilder');
 
     useEffect(() => {
         document.documentElement.lang = i18n.language;
@@ -67,7 +67,7 @@ const ProPage: React.FC = () => {
                 </header>
 
                 <main>
-                    {/* Section 1: Hero with Profile Selector */}
+                    {/* Section 1: Hero with Onboarding CTA */}
                     <section className="py-12 sm:py-32 text-center">
                         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-white">
@@ -76,27 +76,16 @@ const ProPage: React.FC = () => {
                             <p className="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-gray-400">
                                 {t('proPage.hero.subtitle')}
                             </p>
-                            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
-                                <button
-                                    onClick={() => setSelectedProfile('careerBuilder')}
-                                    className={`px-6 py-3 rounded-lg font-semibold transition-all ${
-                                        selectedProfile === 'careerBuilder'
-                                            ? 'bg-violet-600 text-white'
-                                            : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                                    }`}
+                            <div className="mt-10 flex flex-col items-center justify-center gap-3">
+                                <Link
+                                    to="/pro/onboarding"
+                                    className="inline-flex items-center justify-center px-8 py-3 bg-violet-600 text-white font-semibold rounded-lg hover:bg-violet-700 transition-colors"
                                 >
-                                    {t('proPage.hero.careerBuilder')}
-                                </button>
-                                <button
-                                    onClick={() => setSelectedProfile('industryExpert')}
-                                    className={`px-6 py-3 rounded-lg font-semibold transition-all ${
-                                        selectedProfile === 'industryExpert'
-                                            ? 'bg-violet-600 text-white'
-                                            : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                                    }`}
-                                >
-                                    {t('proPage.hero.industryExpert')}
-                                </button>
+                                    {t('proPage.hero.onboardingCta')}
+                                </Link>
+                                <p className="text-sm sm:text-base text-gray-400">
+                                    {t('proPage.hero.onboardingHint')}
+                                </p>
                             </div>
                         </div>
                     </section>

@@ -314,8 +314,8 @@ export default {
     "hero": {
       "title": "Tu siguiente oportunidad depende de tu inglés. LinguaX te lo entrena.",
       "subtitle": "Resulta que no te falta inglés. Te falta confianza para hablar bajo presión.",
-      "careerBuilder": "Busco Trabajo",
-      "industryExpert": "Mejorar mi Sector"
+      "onboardingCta": "Ver mi Inglés profesional",
+      "onboardingHint": "Analiza tu nivel de Inglés profesional en 15 segundos"
     },
     "qualify": {
       "title": "¿Es LinguaX Pro para ti?",
@@ -418,5 +418,23 @@ export default {
         "offerEnds": "La oferta termina en:"
       }
     }
+  },
+  "proOnboarding": {
+    "pageTitle": "LinguaX Pro | Onboarding Profesional",
+    "pageDescription": "Onboarding rápido para profesionales e independientes antes de tu análisis de inglés profesional de 15 segundos.",
+    "stepLabel": "Paso 1 de 3",
+    "title": "Vamos a personalizar tu onboarding profesional",
+    "subtitle": "Elige tu perfil para adaptar tus siguientes pasos.",
+    "question": "¿Cómo trabajas hoy?",
+    "professional": {
+      "title": "Profesional",
+      "description": "Trabajo dentro de un equipo en una empresa."
+    },
+    "independent": {
+      "title": "Independiente",
+      "description": "Trabajo como freelancer, consultor o fundador."
+    },
+    "microcopy": "En el siguiente paso, analizarás tu nivel de inglés profesional en 15 segundos.",
+    "continueCta": "Continuar"
   }
 }
