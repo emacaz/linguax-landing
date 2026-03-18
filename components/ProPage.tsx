@@ -284,13 +284,15 @@ const ProPage: React.FC = () => {
                                                 <span className="text-5xl font-extrabold text-white">
                                                     {t('proPage.pricing.monthly.price')}
                                                 </span>
-                                                <span className="text-sm text-gray-500 ml-2 line-through">
-                                                    {t('proPage.pricing.monthly.originalPrice')}
-                                                </span>
+                                                {t('proPage.pricing.monthly.originalPrice') && (
+                                                    <span className="text-sm text-gray-500 ml-2 line-through">
+                                                        {t('proPage.pricing.monthly.originalPrice')}
+                                                    </span>
+                                                )}
                                             </div>
                                             <div className="flex-grow"></div>
                                             <a
-                                                href="https://buy.stripe.com/3cI3cu7n26ey2cZ3avaMU0a"
+                                                href="https://buy.stripe.com/00wbJ06iYdH03h38uPaMU0j"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="mt-8 block w-full text-center bg-transparent border border-gray-700 text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors"
@@ -311,16 +313,18 @@ const ProPage: React.FC = () => {
                                                 <span className="text-5xl font-extrabold text-white">
                                                     {t('proPage.pricing.annual.price')}
                                                 </span>
-                                                <span className="text-sm text-gray-500 ml-2 line-through">
-                                                    {t('proPage.pricing.annual.originalPrice')}
-                                                </span>
+                                                {t('proPage.pricing.annual.originalPrice') && (
+                                                    <span className="text-sm text-gray-500 ml-2 line-through">
+                                                        {t('proPage.pricing.annual.originalPrice')}
+                                                    </span>
+                                                )}
                                                 <p className="text-violet-400 font-bold mt-1">
                                                     {t('proPage.pricing.annual.equivalent')}
                                                 </p>
                                             </div>
                                             <div className="flex-grow"></div>
                                             <a
-                                                href="https://buy.stripe.com/4gM9ASbDi5auaJvbH1aMU0b"
+                                                href="https://buy.stripe.com/8x2cN422IauOdVH12naMU0k"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="mt-8 block w-full text-center bg-violet-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg shadow-violet-600/30 hover:bg-violet-700 transition-all"
