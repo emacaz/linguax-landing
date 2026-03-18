@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
-import Footer from './Footer';
-
-type OnboardingProfile = 'professional' | 'independent';
+import Footer from '../../Footer';
+import ProfileOptionCard from './components/ProfileOptionCard';
+import { useProOnboarding } from './hooks/useProOnboarding';
 
 const ProOnboardingPage: React.FC = () => {
     const { t, i18n } = useTranslation();
     const navigate = useNavigate();
-    const [selectedProfile, setSelectedProfile] = useState<OnboardingProfile | null>(null);
+    const { selectedProfile, setSelectedProfile, hasSelection } = useProOnboarding();
 
     useEffect(() => {
         document.documentElement.lang = i18n.language;
@@ -61,31 +61,19 @@ const ProOnboardingPage: React.FC = () => {
                             </p>
 
                             <div className="mt-5 grid sm:grid-cols-2 gap-4">
-                                <button
-                                    type="button"
-                                    onClick={() => setSelectedProfile('professional')}
-                                    className={`text-left p-5 rounded-xl border transition-colors ${
-                                        selectedProfile === 'professional'
-                                            ? 'border-violet-500 bg-violet-900/30'
-                                            : 'border-gray-700 bg-[#0A0A12]/40 hover:border-gray-500'
-                                    }`}
-                                >
-                                    <p className="text-lg font-semibold text-white">{t('proOnboarding.professional.title')}</p>
-                                    <p className="mt-1 text-sm text-gray-400">{t('proOnboarding.professional.description')}</p>
-                                </button>
+                                <ProfileOptionCard
+                                    title={t('proOnboarding.professional.title')}
+                                    description={t('proOnboarding.professional.description')}
+                                    isSelected={selectedProfile === 'professional'}
+                                    onSelect={() => setSelectedProfile('professional')}
+                                />
 
-                                <button
-                                    type="button"
-                                    onClick={() => setSelectedProfile('independent')}
-                                    className={`text-left p-5 rounded-xl border transition-colors ${
-                                        selectedProfile === 'independent'
-                                            ? 'border-violet-500 bg-violet-900/30'
-                                            : 'border-gray-700 bg-[#0A0A12]/40 hover:border-gray-500'
-                                    }`}
-                                >
-                                    <p className="text-lg font-semibold text-white">{t('proOnboarding.independent.title')}</p>
-                                    <p className="mt-1 text-sm text-gray-400">{t('proOnboarding.independent.description')}</p>
-                                </button>
+                                <ProfileOptionCard
+                                    title={t('proOnboarding.independent.title')}
+                                    description={t('proOnboarding.independent.description')}
+                                    isSelected={selectedProfile === 'independent'}
+                                    onSelect={() => setSelectedProfile('independent')}
+                                />
                             </div>
 
                             <p className="mt-6 text-sm text-gray-400">{t('proOnboarding.microcopy')}</p>
@@ -93,7 +81,7 @@ const ProOnboardingPage: React.FC = () => {
                             <button
                                 type="button"
                                 onClick={handleContinue}
-                                disabled={!selectedProfile}
+                                disabled={!hasSelection}
                                 className="mt-6 w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 bg-violet-600 text-white font-semibold rounded-lg hover:bg-violet-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 {t('proOnboarding.continueCta')}

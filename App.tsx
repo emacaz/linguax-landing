@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 const LandingPage = lazy(() => import('./components/LandingPage'));
 const ProPage = lazy(() => import('./components/ProPage'));
-const ProOnboardingPage = lazy(() => import('./components/ProOnboardingPage'));
+const ProOnboardingPage = lazy(() => import('./components/pro/onboarding/ProOnboardingPage'));
 const SpringPage = lazy(() => import('./components/SpringPage'));
 
 const App: React.FC = () => {
