@@ -1,14 +1,28 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Footer from '../../Footer';
-import ProfileOptionCard from './components/ProfileOptionCard';
+import { PRO_ONBOARDING_TOTAL_STEPS } from './config';
+import ProVoiceAnalyzer from './components/ProVoiceAnalyzer';
 import { useProOnboarding } from './hooks/useProOnboarding';
+import BridgeStep from './steps/BridgeStep';
+import OfferStep from './steps/OfferStep';
+import ProfileSelectionStep from './steps/ProfileSelectionStep';
 
 const ProOnboardingPage: React.FC = () => {
     const { t, i18n } = useTranslation();
-    const navigate = useNavigate();
-    const { selectedProfile, setSelectedProfile, hasSelection } = useProOnboarding();
+    const {
+        currentStep,
+        selectedProfile,
+        setSelectedProfile,
+        analysisResult,
+        goToAnalyzer,
+        handleAnalyzerComplete,
+        goToOffer,
+        goBackToProfile,
+        goBackToAnalyzer,
+        goBackToBridge,
+    } = useProOnboarding();
 
     useEffect(() => {
         document.documentElement.lang = i18n.language;
@@ -19,12 +33,65 @@ const ProOnboardingPage: React.FC = () => {
         }
     }, [i18n.language, t]);
 
-    const handleContinue = () => {
-        if (!selectedProfile) {
-            return;
+    const currentStepIndex = {
+        profile: 1,
+        analyzer: 2,
+        bridge: 3,
+        offer: 4,
+    }[currentStep];
+
+    const renderCurrentStep = () => {
+        if (currentStep === 'profile') {
+            return (
+                <ProfileSelectionStep
+                    selectedProfile={selectedProfile}
+                    onSelectProfile={setSelectedProfile}
+                    onContinue={goToAnalyzer}
+                />
+            );
         }
 
-        navigate(`/pro?profile=${selectedProfile}#pricing`);
+        if (currentStep === 'analyzer' && selectedProfile) {
+            return (
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <ProVoiceAnalyzer
+                        selectedProfile={selectedProfile}
+                        onContinue={handleAnalyzerComplete}
+                    />
+                    <div className="mt-6 flex justify-center">
+                        <button
+                            type="button"
+                            onClick={goBackToProfile}
+                            className="text-gray-400 font-semibold hover:text-white transition-colors"
+                        >
+                            {t('proOnboarding.analyzer.backCta')}
+                        </button>
+                    </div>
+                </div>
+            );
+        }
+
+        if (currentStep === 'bridge' && selectedProfile) {
+            return (
+                <BridgeStep
+                    analysisResult={analysisResult}
+                    onContinue={goToOffer}
+                    onBack={goBackToAnalyzer}
+                />
+            );
+        }
+
+        if (currentStep === 'offer' && selectedProfile) {
+            return <OfferStep selectedProfile={selectedProfile} onBack={goBackToBridge} />;
+        }
+
+        return (
+            <ProfileSelectionStep
+                selectedProfile={selectedProfile}
+                onSelectProfile={setSelectedProfile}
+                onContinue={goToAnalyzer}
+            />
+        );
     };
 
     return (
@@ -42,52 +109,14 @@ const ProOnboardingPage: React.FC = () => {
                         <Link to="/pro" className="text-2xl font-extrabold tracking-tight text-white">
                             Lingua<span className="text-violet-500">X</span>-Pro
                         </Link>
-                        <span className="text-sm text-gray-400">{t('proOnboarding.stepLabel')}</span>
+                        <span className="text-sm text-gray-400">
+                            {t('proOnboarding.stepLabel', { current: currentStepIndex, total: PRO_ONBOARDING_TOTAL_STEPS })}
+                        </span>
                     </div>
                 </header>
 
                 <main className="py-10 sm:py-20">
-                    <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="text-center">
-                            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-white">
-                                {t('proOnboarding.title')}
-                            </h1>
-                            <p className="mt-4 text-lg text-gray-400">{t('proOnboarding.subtitle')}</p>
-                        </div>
-
-                        <div className="mt-10 p-6 sm:p-8 border border-gray-800 rounded-2xl bg-[#0F0F1A]/60">
-                            <p className="text-sm uppercase tracking-wider text-violet-400 font-semibold">
-                                {t('proOnboarding.question')}
-                            </p>
-
-                            <div className="mt-5 grid sm:grid-cols-2 gap-4">
-                                <ProfileOptionCard
-                                    title={t('proOnboarding.professional.title')}
-                                    description={t('proOnboarding.professional.description')}
-                                    isSelected={selectedProfile === 'professional'}
-                                    onSelect={() => setSelectedProfile('professional')}
-                                />
-
-                                <ProfileOptionCard
-                                    title={t('proOnboarding.independent.title')}
-                                    description={t('proOnboarding.independent.description')}
-                                    isSelected={selectedProfile === 'independent'}
-                                    onSelect={() => setSelectedProfile('independent')}
-                                />
-                            </div>
-
-                            <p className="mt-6 text-sm text-gray-400">{t('proOnboarding.microcopy')}</p>
-
-                            <button
-                                type="button"
-                                onClick={handleContinue}
-                                disabled={!hasSelection}
-                                className="mt-6 w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 bg-violet-600 text-white font-semibold rounded-lg hover:bg-violet-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                            >
-                                {t('proOnboarding.continueCta')}
-                            </button>
-                        </div>
-                    </section>
+                    {renderCurrentStep()}
                 </main>
 
                 <Footer />
