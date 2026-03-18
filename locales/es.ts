@@ -8,7 +8,7 @@ export default {
   "hero": {
     "title": "Entrena tu Voz con IA para cerrar negocios en Inglés sin perder años en academias",
     "subtitle": "Elimina la barrera del idioma en tus operaciones. Nuestra IA entrena la fluidez y autoridad de su equipo en tiempo real.",
-    "cta": "Probar Demo Gratis",
+    "cta": "Para Empresas",
     "independentCta": "Soy Independiente"
   },
   "trustedBy": {
@@ -314,8 +314,8 @@ export default {
     "hero": {
       "title": "Tu siguiente oportunidad depende de tu inglés. LinguaX te lo entrena.",
       "subtitle": "Resulta que no te falta inglés. Te falta confianza para hablar bajo presión.",
-      "careerBuilder": "Busco Trabajo",
-      "industryExpert": "Mejorar mi Sector"
+      "onboardingCta": "Ver mi Inglés profesional",
+      "onboardingHint": "Analiza tu nivel de Inglés profesional en 15 segundos"
     },
     "qualify": {
       "title": "¿Es LinguaX Pro para ti?",
@@ -417,6 +417,278 @@ export default {
         "cta": "Convertirme en Fundador",
         "offerEnds": "La oferta termina en:"
       }
+    }
+  },
+  "proOnboarding": {
+    "pageTitle": "LinguaX Pro | Onboarding Profesional",
+    "pageDescription": "Onboarding rápido para profesionales e independientes antes de tu análisis de inglés profesional de 15 segundos.",
+    "stepLabel": "Paso {{current}} de {{total}}",
+    "title": "Cómo usas tu inglés cambia lo que necesitas entrenar",
+    "subtitle": "Elige tu perfil y te mostramos tu siguiente paso.",
+    "question": "¿Qué tipo de conversaciones quieres dominar?",
+    "professional": {
+      "title": "Profesional",
+      "description": "Reuniones, presentaciones y liderazgo"
+    },
+    "independent": {
+      "title": "Independiente",
+      "description": "Ventas, clientes y negociación"
+    },
+    "microcopy": "Te tomará 15 segundos.",
+    "continueCta": "Continuar",
+    "analyzer": {
+      "hook": {
+        "title": "Analizar mi nivel de Inglés",
+        "profileRelief": {
+          "professional": "Descubre si tu inglés transmite claridad y seguridad cuando más importa.",
+          "independent": "Descubre si tu inglés transmite autoridad cuando vendes y negocias."
+        }
+      },
+      "scenarios": {
+        "pharma": {
+          "label": "Farma",
+          "context": {
+            "professional": "Estás explicando resultados sensibles a un comité y necesitas sonar preciso y seguro. Di la frase con autoridad:",
+            "independent": "Estás explicando una solución compleja a un cliente regulado y necesitas sonar impecable. Di la frase con autoridad:"
+          },
+          "phrase": "Our pharmacokinetic data demonstrates superior bioavailability.",
+          "frictionWord": "bioavailability",
+          "tooltipAnalysis": "La secuencia central pierde nitidez y puede sonar insegura para un oyente nativo. La versión clara reduce fricción y evita repetir la idea.",
+          "tooltipImpact": {
+            "professional": "En contextos de alta responsabilidad, una pronunciación ambigua puede hacer que tus datos parezcan menos sólidos de lo que realmente son.",
+            "independent": "Cuando vendes expertise, una pronunciación ambigua puede hacer que tu propuesta parezca menos premium y más riesgosa."
+          }
+        },
+        "financial": {
+          "label": "Finanzas",
+          "context": {
+            "professional": "Estás justificando proyecciones frente a líderes y tu delivery debe sonar firme. Di la frase con convicción:",
+            "independent": "Estás negociando números con un cliente internacional y no puedes sonar dubitativo. Di la frase con convicción:"
+          },
+          "phrase": "We project a seventeen percent increase in quarterly recurring revenue.",
+          "frictionWord": "recurring",
+          "tooltipAnalysis": "El sonido clave pierde tensión y puede bajar la percepción de control. Ajustarlo mejora autoridad inmediata.",
+          "tooltipImpact": {
+            "professional": "Si tu voz no sostiene el dato, tu mensaje puede parecer menos confiable incluso cuando el contenido es correcto.",
+            "independent": "Si tu voz no sostiene el dato, el cliente puede asociarlo con poca claridad comercial y más objeciones."
+          }
+        },
+        "tech": {
+          "label": "Tech",
+          "context": {
+            "professional": "Estás presentando una decisión técnica a tu equipo o a dirección. Di la frase con claridad:",
+            "independent": "Estás defendiendo tu enfoque técnico frente a un cliente que quiere seguridad. Di la frase con claridad:"
+          },
+          "phrase": "This architecture scales horizontally to meet enterprise demand.",
+          "frictionWord": "architecture",
+          "tooltipAnalysis": "El énfasis se rompe antes de tiempo y la frase pierde fluidez. Corregirlo hace que tu argumento suene más sólido.",
+          "tooltipImpact": {
+            "professional": "Cuando el delivery técnico suena fragmentado, la audiencia duda más rápido de la estrategia, no solo del idioma.",
+            "independent": "Cuando el delivery técnico suena fragmentado, el cliente percibe más riesgo y menos dominio de tu solución."
+          }
+        },
+        "legal": {
+          "label": "Legal",
+          "context": {
+            "professional": "Estás defendiendo una postura crítica y necesitas firmeza verbal. Di la frase con seguridad:",
+            "independent": "Estás marcando límites y condiciones en una negociación delicada. Di la frase con seguridad:"
+          },
+          "phrase": "The precedent set by this case is incontrovertible.",
+          "frictionWord": "incontrovertible",
+          "tooltipAnalysis": "La entonación cae donde debería afirmarse. Ese pequeño quiebre debilita la sensación de convicción.",
+          "tooltipImpact": {
+            "professional": "En conversaciones de alto impacto, sonar menos firme de lo que piensas puede restarle peso a tu criterio.",
+            "independent": "En una negociación delicada, sonar menos firme de lo que piensas puede hacerte ceder margen sin darte cuenta."
+          }
+        }
+      },
+      "recording": {
+        "instruction": "Mantén presionado para grabar",
+        "enableMic": "Haz clic para activar el micrófono",
+        "noSpeech": "No se detectó audio. Inténtalo otra vez.",
+        "incomplete": "Intenta decir la frase completa."
+      },
+      "analysis": {
+        "title": "Analizando tu voz...",
+        "status1": "Midiendo claridad...",
+        "status2": "Midiendo seguridad...",
+        "status3": "Midiendo ritmo...",
+        "status4": "Calculando impacto..."
+      },
+      "results": {
+        "title": "Tu diagnóstico",
+        "clarityIndexLabel": "Nivel actual",
+        "qualitativeLabels": {
+          "elite": "Élite",
+          "convincing": "Convincente",
+          "functional": "Funcional",
+          "riskArea": "Zona de riesgo"
+        },
+        "phoneticAnalysis": {
+          "title": "Dónde pierdes fuerza",
+          "tooltipTitle": "Punto a corregir"
+        },
+        "prosodyAnalysis": {
+          "title": "Cómo suenas",
+          "metricLabel": "Cadencia",
+          "impact": {
+            "professional": "Si tu mensaje no suena firme, la otra persona duda más.",
+            "independent": "Si tu mensaje no suena firme, la otra persona duda más."
+          }
+        },
+        "cta": {
+          "highScoreText": {
+            "professional": "Tu base es buena. Ahora toca volverla consistente cuando la presión sube.",
+            "independent": "Tu base es buena. Ahora toca volverla consistente cuando vendes y negocias."
+          },
+          "lowScoreText": {
+            "professional": "Tu inglés no está fallando por conocimiento. Está fallando en cómo suena bajo presión.",
+            "independent": "Tu inglés no está fallando por conocimiento. Está fallando en cómo suena cuando tienes que convencer."
+          },
+          "primaryButton": "Continuar",
+          "secondaryButton": "Quiero intentarlo otra vez"
+        }
+      },
+      "permissions": {
+        "denied": "Permiso de micrófono denegado. Actívalo en tu navegador para usar esta función."
+      },
+      "backCta": "Cambiar perfil"
+    },
+    "bridge": {
+      "eyebrow": "LinguaX-AI · Plataforma de entrenamiento vocal",
+      "title": "Asi funciona tu entrenador.",
+      "subtitle": "",
+      "scoreLabel": "Tu evaluación",
+      "profileRelief": {
+        "professional": "Necesitas sonar claro cuando la presión sube.",
+        "independent": "Necesitas sonar claro para vender sin fricción."
+      },
+      "benefits": {
+        "alwaysAvailable": {
+          "eyebrow": "Práctica",
+          "title": "Practicas sin límite",
+          "description": ""
+        },
+        "pronunciationCoach": {
+          "eyebrow": "Corrección",
+          "title": "Corriges lo que te resta impacto",
+          "description": ""
+        },
+        "simulations": {
+          "eyebrow": "Simulación",
+          "title": "Simulas conversaciones reales",
+          "description": ""
+        }
+      },
+      "demo": {
+        "eyebrow": "Mini demo interactiva",
+        "liveLabel": "Simulación activa",
+        "userSpeechLabel": "Tu práctica",
+        "aiCoachLabel": "Respuesta de LinguaX",
+        "metricsLabel": "Señales que corrige",
+        "outcomeLabel": "Resultado esperado",
+        "metrics": {
+          "clarity": "Claridad",
+          "pacing": "Ritmo",
+          "confidence": "Confianza"
+        },
+        "scenes": {
+          "meetings": {
+            "label": "Reuniones",
+            "summary": "Ensaya mensajes críticos antes de una reunión importante.",
+            "headline": "Ensaya una reunión antes de entrar",
+            "userLine": "I want to explain the plan, but I don't want to sound unsure when they ask hard questions.",
+            "aiLine": "Vamos a repetir esa idea con una pausa estratégica antes de la objeción y más firmeza en la conclusión.",
+            "outcome": "Llegas con una versión más clara, más ordenada y con menos fricción al responder.",
+            "tag": "Más control en vivo"
+          },
+          "interviews": {
+            "label": "Entrevistas",
+            "summary": "Practica respuestas que suenen convincentes y no memorizadas.",
+            "headline": "Afina tus respuestas para entrevistas",
+            "userLine": "I know what I want to say, but under pressure I start sounding flat and less confident.",
+            "aiLine": "Probemos una entrega más compacta: menos relleno, más intención en la primera frase y cierre con seguridad.",
+            "outcome": "Tus respuestas suenan más profesionales y con mayor sensación de preparación real.",
+            "tag": "Más autoridad personal"
+          },
+          "negotiations": {
+            "label": "Negociaciones",
+            "summary": "Ensaya cómo sostener precio, condiciones y autoridad en inglés.",
+            "headline": "Simula una negociación antes de jugarla",
+            "userLine": "We can revisit the scope, but the pricing reflects the value and timeline you need.",
+            "aiLine": "Bien. Ahora sostén más la palabra value, reduce la velocidad final y deja una pausa antes del cierre.",
+            "outcome": "Tu posición se percibe más firme y el cliente siente menos espacio para empujarte.",
+            "tag": "Más margen protegido"
+          }
+        }
+      },
+      "continueCta": "Quiero acceso",
+      "backCta": "Volver al análisis"
+    },
+    "offer": {
+      "eyebrow": "LinguaX-AI Pro",
+      "title": "Tu entrenador de ingles profesional, con IA.",
+      "subtitle": "Entrenamientos de voz, simulaciones y ruta personalizada. Sin academia. Sin horarios.",
+      "conditionText": "Tu evaluación activó esta condición por 20 minutos.",
+      "profileRelief": {
+        "professional": "",
+        "independent": ""
+      },
+      "featuredTag": "Recomendado",
+      "standardModeLabel": "Precio estándar activo",
+      "timer": {
+        "activeLabel": "Oferta activa",
+        "activeTitle": "Tu condición especial sigue disponible",
+        "expiredLabel": "Oferta finalizada",
+        "expiredTitle": "La condición especial terminó",
+        "minutes": "min",
+        "seconds": "seg"
+      },
+      "plans": {
+        "monthly": {
+          "name": "Plan mensual",
+          "offerPrice": "$67 USD",
+          "regularPrice": "$93 USD",
+          "savings": "Ahorras $26 hoy",
+          "description": {
+            "professional": "Empieza ahora y mejora rápido.",
+            "independent": "Empieza ahora y mejora rápido."
+          },
+          "offerCta": "Activar mensual con evaluación",
+          "expiredCta": "Ir al mensual estándar"
+        },
+        "annual": {
+          "name": "Plan anual",
+          "offerPrice": "$597 USD",
+          "regularPrice": "$1,116 USD",
+          "savings": "Ahorras $519 hoy",
+          "description": {
+            "professional": "La mejor opción para transformar tu inglés profesional de verdad.",
+            "independent": "La mejor opción para transformar tu inglés profesional de verdad."
+          },
+          "offerCta": "Activar anual con evaluación",
+          "expiredCta": "Ir al anual estándar"
+        }
+      },
+      "validation": {
+        "eyebrow": "Qué incluye tu plan",
+        "title": "Qué incluye tu plan",
+        "items": {
+          "diagnosis": {
+            "title": "Sesiones de voz ilimitadas",
+            "description": "Practicas cuando necesitas, sin límite de sesiones."
+          },
+          "plan": {
+            "title": "Ruta adaptada a tu perfil",
+            "description": "El sistema ajusta los ejercicios según tus puntos débiles."
+          },
+          "support": {
+            "title": "Simulaciones de conversaciones reales",
+            "description": "Reuniones, entrevistas y negociaciones en inglés."
+          }
+        }
+      },
+      "backCta": "← Volver"
     }
   }
 }
