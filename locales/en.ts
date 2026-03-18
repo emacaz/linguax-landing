@@ -8,7 +8,7 @@ export default {
   "hero": {
     "title": "Train Your Voice with AI to close deals in English without losing years in academies",
     "subtitle": "Break the language barrier in your global operations. Our AI trains your team’s fluency and authority in real-time.",
-    "cta": "Try Demo for Free",
+    "cta": "For Companies",
     "independentCta": "I'm Independent"
   },
   "trustedBy": {

@@ -8,7 +8,7 @@ export default {
   "hero": {
     "title": "Entrena tu Voz con IA para cerrar negocios en Inglés sin perder años en academias",
     "subtitle": "Elimina la barrera del idioma en tus operaciones. Nuestra IA entrena la fluidez y autoridad de su equipo en tiempo real.",
-    "cta": "Probar Demo Gratis",
+    "cta": "Para Empresas",
     "independentCta": "Soy Independiente"
   },
   "trustedBy": {
