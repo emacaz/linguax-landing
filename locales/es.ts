@@ -6,8 +6,8 @@ export default {
     "forProfessionals": "Para Profesionales"
   },
   "hero": {
-    "title": "Entrena tu Voz con IA para cerrar negocios en Inglés sin perder años en academias",
-    "subtitle": "Elimina la barrera del idioma en tus operaciones. Nuestra IA entrena la fluidez y autoridad de su equipo en tiempo real.",
+    "title": "Ya sabes inglés. El problema es que no lo usas.",
+    "subtitle": "Nuestra IA no te enseña más gramática. Te entrena a tu ritmo a hablar lo que ya sabes, hasta que salga solo.",
     "cta": "Para Empresas",
     "independentCta": "Soy Independiente"
   },

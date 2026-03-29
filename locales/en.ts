@@ -6,8 +6,8 @@ export default {
     "forProfessionals": "For Professionals"
   },
   "hero": {
-    "title": "Train Your Voice with AI to close deals in English without losing years in academies",
-    "subtitle": "Break the language barrier in your global operations. Our AI trains your team’s fluency and authority in real-time.",
+    "title": "You already know English. The problem is you don't use it.",
+    "subtitle": "Our AI doesn't teach you more grammar. It trains you at your own pace to speak what you already know, until it comes naturally.",
     "cta": "For Companies",
     "independentCta": "I'm Independent"
   },
