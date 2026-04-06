@@ -398,14 +398,14 @@ export default {
       "title": "Your Investment in Professional Growth",
       "monthly": {
         "name": "Monthly Plan",
-        "price": "$33 USD",
+        "price": "$93 USD",
         "originalPrice": "",
         "cta": "Start Training"
       },
       "annual": {
         "name": "Annual Plan",
         "tag": "Most Popular",
-        "price": "$330 USD",
+        "price": "$930 USD",
         "equivalent": "2 months free on annual",
         "originalPrice": "",
         "cta": "Maximum Savings & Commitment"
@@ -647,8 +647,8 @@ export default {
       "plans": {
         "monthly": {
           "name": "Monthly plan",
-          "offerPrice": "$27 USD",
-          "regularPrice": "$33 USD",
+          "offerPrice": "$74 USD",
+          "regularPrice": "$93 USD",
           "savings": "Save 20% today",
           "description": {
             "professional": "Start now and improve fast.",
@@ -659,9 +659,9 @@ export default {
         },
         "annual": {
           "name": "Annual plan",
-          "offerPrice": "$270 USD",
-          "regularPrice": "$330 USD",
-          "savings": "2 months free on annual",
+          "offerPrice": "$740 USD",
+          "regularPrice": "$930 USD",
+          "savings": "Save 20% today",
           "description": {
             "professional": "The best option to truly transform your professional English.",
             "independent": "The best option to truly transform your professional English."
