@@ -398,14 +398,14 @@ export default {
       "title": "Tu Inversión en Crecimiento Profesional",
       "monthly": {
         "name": "Plan Mensual",
-        "price": "$33 USD",
+        "price": "$93 USD",
         "originalPrice": "",
         "cta": "Empezar a Entrenar"
       },
       "annual": {
         "name": "Plan Anual",
         "tag": "Más Popular",
-        "price": "$330 USD",
+        "price": "$930 USD",
         "equivalent": "2 meses gratis en el anual",
         "originalPrice": "",
         "cta": "Máximo Ahorro y Compromiso"
@@ -647,8 +647,8 @@ export default {
       "plans": {
         "monthly": {
           "name": "Plan mensual",
-          "offerPrice": "$27 USD",
-          "regularPrice": "$33 USD",
+          "offerPrice": "$74 USD",
+          "regularPrice": "$93 USD",
           "savings": "Ahorras 20% hoy",
           "description": {
             "professional": "Empieza ahora y mejora rápido.",
@@ -659,9 +659,9 @@ export default {
         },
         "annual": {
           "name": "Plan anual",
-          "offerPrice": "$270 USD",
-          "regularPrice": "$330 USD",
-          "savings": "2 meses gratis en el anual",
+          "offerPrice": "$740 USD",
+          "regularPrice": "$930 USD",
+          "savings": "Ahorras 20% hoy",
           "description": {
             "professional": "La mejor opción para transformar tu inglés profesional de verdad.",
             "independent": "La mejor opción para transformar tu inglés profesional de verdad."

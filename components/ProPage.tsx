@@ -292,7 +292,7 @@ const ProPage: React.FC = () => {
                                             </div>
                                             <div className="flex-grow"></div>
                                             <a
-                                                href="https://buy.stripe.com/00wbJ06iYdH03h38uPaMU0j"
+                                                href="https://buy.stripe.com/9B6dR89va0Ueg3P4ezaMU0s"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="mt-8 block w-full text-center bg-transparent border border-gray-700 text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors"
@@ -324,7 +324,7 @@ const ProPage: React.FC = () => {
                                             </div>
                                             <div className="flex-grow"></div>
                                             <a
-                                                href="https://buy.stripe.com/8x2cN422IauOdVH12naMU0k"
+                                                href="https://buy.stripe.com/3cI9ASePucCW8BneTdaMU0u"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="mt-8 block w-full text-center bg-violet-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg shadow-violet-600/30 hover:bg-violet-700 transition-all"
