@@ -75,10 +75,13 @@ const RefundPolicyEN: React.FC = () => {
                             Approved refunds will be processed within a maximum of 15 business days from the official confirmation by Lingua Technologies Inc.
                         </p>
                         <p className="text-gray-700 leading-relaxed mb-4">
-                            In cases where the amount to be refunded is significant or the company's operational flow requires it, Lingua Technologies Inc. reserves the right to fractionate the refund into agreed installments with the client, without this implying non-compliance with this policy.
+                            In cases where the amount to be refunded is significant, or the company's operational flow and refund funds require it, Lingua Technologies Inc. reserves the right to fractionate the refund into installments. The amounts and frequency of each installment will be subject to the company's operational availability at the time of the refund.
+                        </p>
+                        <p className="text-gray-700 leading-relaxed mb-4">
+                            The client will be notified of the installment plan before its execution and must confirm it in writing. The start of the payment process will be conditioned upon such confirmation.
                         </p>
                         <p className="text-gray-700 leading-relaxed">
-                            In any case, the client will be notified of the payment plan before its execution and must confirm it in writing.
+                            In any case, Lingua Technologies Inc. commits to maintaining active communication with the client throughout the entire process until the total settlement of the refund.
                         </p>
                     </section>
 
