@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { XIcon, LinkedInIcon } from './icons';
 
 const Footer: React.FC = () => {
@@ -37,6 +38,20 @@ const Footer: React.FC = () => {
                     >
                         <LinkedInIcon />
                     </a>
+                </div>
+                <div className="mt-6 flex justify-center items-center space-x-6 text-sm">
+                    <Link 
+                        to="/refund-policy-en" 
+                        className="text-gray-500 hover:text-white transition-colors duration-300"
+                    >
+                        {t('footer.legal.refundPolicyEN')}
+                    </Link>
+                    <Link 
+                        to="/refund-policy-es" 
+                        className="text-gray-500 hover:text-white transition-colors duration-300"
+                    >
+                        {t('footer.legal.refundPolicyES')}
+                    </Link>
                 </div>
             </div>
         </footer>

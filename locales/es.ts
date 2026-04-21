@@ -53,7 +53,12 @@ export default {
   },
   "footer": {
     "badge": "A Delaware Corporation / US Based Infrastructure",
-    "copyright": "Todos los derechos reservados."
+    "copyright": "Todos los derechos reservados.",
+    "legal": {
+      "refundPolicy": "Política de Reembolso",
+      "refundPolicyES": "Política de Reembolso (ES)",
+      "refundPolicyEN": "Refund Policy (EN)"
+    }
   },
   "form": {
     "title": "Solicitar una Demo",
