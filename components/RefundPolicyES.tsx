@@ -75,10 +75,13 @@ const RefundPolicyES: React.FC = () => {
                             Los reembolsos aprobados serán procesados en un plazo máximo de 15 días hábiles desde la confirmación oficial por parte de Lingua Technologies Inc.
                         </p>
                         <p className="text-gray-700 leading-relaxed mb-4">
-                            En casos donde el monto a reembolsar sea significativo o el flujo operativo de la empresa lo requiera, Lingua Technologies Inc. se reserva el derecho de fraccionar el reembolso en cuotas acordadas con el cliente, sin que esto implique incumplimiento de la presente política.
+                            En casos donde el monto a reembolsar sea significativo, o el flujo operativo y los fondos destinados para reembolsos de la empresa así lo requieran, Lingua Technologies Inc. se reserva el derecho de fraccionar el reembolso en cuotas. Los montos y frecuencia de cada cuota estarán sujetos a la disponibilidad operativa de la empresa en el momento del reembolso.
+                        </p>
+                        <p className="text-gray-700 leading-relaxed mb-4">
+                            El cliente será notificado del plan de cuotas antes de su ejecución y deberá confirmarlo por escrito. El inicio del proceso de pago quedará condicionado a dicha confirmación.
                         </p>
                         <p className="text-gray-700 leading-relaxed">
-                            En todo caso, el cliente será notificado del plan de pago antes de su ejecución y deberá confirmarlo por escrito.
+                            En todo caso, Lingua Technologies Inc. se compromete a mantener comunicación activa con el cliente durante todo el proceso hasta la liquidación total del reembolso.
                         </p>
                     </section>
 
