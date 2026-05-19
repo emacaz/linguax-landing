@@ -19,7 +19,7 @@ const RefundPolicyES: React.FC = () => {
                     <section className="mb-8">
                         <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Filosofía general</h2>
                         <p className="text-gray-700 leading-relaxed">
-                            En Lingua Technologies Inc. creemos en entregar valor real desde el primer momento. Al realizar un pago, el cliente reconoce que está adquiriendo acceso a tecnología, conocimiento especializado o tiempo profesional reservado exclusivamente para él — activos que tienen un costo real para la empresa una vez asignados. El acceso a cualquier producto o servicio implica la aceptación expresa de esta política.
+                            En Lingua Technologies Inc. creemos en entregar valor real desde el primer momento. Al realizar un pago, el cliente reconoce que está adquiriendo acceso a tecnología, conocimiento especializado o tiempo profesional reservado exclusivamente para él — activos que tienen un costo real para la empresa una vez asignados. El acceso a cualquier producto o servicio implica la aceptación expresa de esta política. Asimismo, al completar una compra, el cliente reconoce expresamente que el acceso al servicio o su ejecución comienza de forma inmediata tras la confirmación del pago. En la medida en que lo permita la legislación aplicable, el cliente renuncia con este acto a cualquier derecho de desistimiento o período de reflexión que pudiera corresponderle bajo la legislación local de su país — en línea con las excepciones reconocidas para servicios digitales y contenido profesional tanto bajo el derecho comercial de los Estados Unidos como en los marcos comerciales internacionales de amplia adopción.
                         </p>
                     </section>
 
@@ -31,6 +31,7 @@ const RefundPolicyES: React.FC = () => {
                             <li>No se realizan reembolsos proporcionales por días no utilizados bajo ninguna circunstancia.</li>
                             <li>En caso de fallo técnico crítico atribuible exclusivamente a Lingua Technologies Inc., el cliente dispone de 15 días hábiles para reportarlo por escrito al correo corporativo. La empresa evaluará el caso y podrá ofrecer una extensión de acceso o crédito equivalente al tiempo afectado. No se considerarán fallos técnicos atribuibles a la conexión, dispositivo o configuración del cliente.</li>
                             <li>Las comisiones cobradas por procesadores de pago externos no son reembolsables bajo ninguna circunstancia, ya que son servicios ya ejecutados en el momento de la transacción.</li>
+                            <li>Los pagos de suscripción financian la infraestructura compartida que se aprovisiona con anticipación para cada ciclo de facturación — incluyendo capacidad de cómputo de IA, disponibilidad de plataforma y recursos del sistema reservados por cuenta activa. Este modelo de aprovisionamiento anticipado implica que los costos asociados a una suscripción se comprometen desde el inicio de cada periodo independientemente del nivel de uso real, lo que hace que los reembolsos a mitad de periodo sean estructuralmente incompatibles con el modelo operativo y financiero de la empresa.</li>
                         </ul>
                     </section>
 
@@ -38,6 +39,7 @@ const RefundPolicyES: React.FC = () => {
                         <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. Programas de capacitación privada</h2>
                         <ul className="list-disc list-inside text-gray-700 leading-relaxed space-y-2">
                             <li>Una vez confirmado el pago y reservado el espacio en la agenda, no se realizan reembolsos por cambio de opinión, desistimiento o circunstancias personales del cliente.</li>
+                            <li>Los costos asociados a un programa de capacitación privada — incluyendo la coordinación y costo de oportunidad del instructor, la preparación personalizada de la sesión, la configuración del software para el perfil del cliente y la coordinación administrativa — son incurridos por Lingua Technologies Inc. en el momento de la reserva, no en el momento de la prestación. Estos costos son irrecuperables con independencia de la posterior cancelación o inasistencia del cliente, y constituyen la base de las restricciones de reembolso descritas en esta sección.</li>
                             <li>Si el cliente necesita cancelar, deberá notificarlo por escrito con un mínimo de 48 horas de anticipación para poder reagendar sin costo adicional. El reagendamiento está sujeto a disponibilidad y solo aplica una vez por programa contratado.</li>
                             <li>Cancelaciones con menos de 48 horas de anticipación no generan derecho a reembolso ni a reagendamiento gratuito.</li>
                             <li>Si el programa incluye acceso previo a materiales, guías o software, el reembolso queda anulado desde el momento en que dichos recursos han sido entregados, independientemente de si el cliente los utilizó.</li>
@@ -89,21 +91,51 @@ const RefundPolicyES: React.FC = () => {
                     </section>
 
                     <section className="mb-8">
-                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. Plazos y condiciones de reembolso</h2>
+                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. Procesamiento de reembolsos: plazos, condiciones y estructura de cuotas</h2>
+
+                        <h3 className="text-lg font-semibold text-gray-800 mb-2 mt-6">7.1 Procesamiento estándar</h3>
                         <p className="text-gray-700 leading-relaxed mb-4">
-                            Los reembolsos aprobados serán procesados en un plazo máximo de 15 días hábiles desde la confirmación oficial por parte de Lingua Technologies Inc.
+                            Los reembolsos aprobados serán procesados en un plazo máximo de 15 días hábiles desde la confirmación oficial por escrito por parte de Lingua Technologies Inc. Todas las resoluciones de reembolso son definitivas y se comunican exclusivamente por escrito a través del canal de soporte oficial.
+                        </p>
+
+                        <h3 className="text-lg font-semibold text-gray-800 mb-2 mt-6">7.2 Justificación corporativa del reembolso en cuotas</h3>
+                        <p className="text-gray-700 leading-relaxed mb-4">
+                            Lingua Technologies Inc. opera bajo un modelo de recursos pre-comprometidos. Cuando se recibe un pago — ya sea por una suscripción o un programa de capacitación privada — la empresa asigna de inmediato capacidad de infraestructura, aprovisiona recursos de cómputo de IA, agenda tiempo profesional y activa flujos operativos en nombre de ese cliente. Estos costos se incurren en el momento de la compra, no en el momento del consumo del servicio. Esto es consistente con las prácticas contables estándar bajo US GAAP, según las cuales los costos de servicio se reconocen y comprometen en el momento de la asignación de recursos, con independencia de los niveles de consumo posteriores.
                         </p>
                         <p className="text-gray-700 leading-relaxed mb-4">
-                            En casos donde el monto a reembolsar sea significativo, o el flujo operativo y los fondos destinados para reembolsos de la empresa así lo requieran, Lingua Technologies Inc. se reserva el derecho de fraccionar el reembolso en cuotas. Los montos y frecuencia de cada cuota estarán sujetos a la disponibilidad operativa de la empresa en el momento del reembolso.
+                            Por consiguiente, los reembolsos aprobados se desembolsan desde los ingresos operativos corrientes y no desde un fondo de depósito en garantía o reserva dedicada — una estructura financiera estándar entre empresas de software por suscripción (SaaS), proveedores de educación profesional y plataformas de servicios digitales en todo el mundo. Emitir reembolsos de cuantía elevada en un único pago puede afectar materialmente la capacidad de la empresa para mantener la prestación ininterrumpida del servicio al conjunto de sus clientes activos. El reembolso en cuotas no refleja ninguna incapacidad de pago, sino una práctica de gestión financiera responsable — utilizada por empresas consolidadas a nivel global — que garantiza que atender el reembolso de un cliente no comprometa la calidad y continuidad del servicio para el resto.
                         </p>
+
+                        <h3 className="text-lg font-semibold text-gray-800 mb-2 mt-6">7.3 Supuestos de aplicación del reembolso en cuotas</h3>
                         <p className="text-gray-700 leading-relaxed mb-4">
-                            El cliente será notificado del plan de cuotas antes de su ejecución y deberá confirmarlo por escrito. El inicio del proceso de pago quedará condicionado a dicha confirmación.
+                            Lingua Technologies Inc. se reserva el derecho de estructurar un reembolso aprobado como plan de cuotas programado en cualquiera de los siguientes supuestos:
                         </p>
+                        <ul className="list-disc list-inside text-gray-700 leading-relaxed space-y-2 mb-4">
+                            <li><strong>Suscripciones:</strong> cuando el importe reembolsable supere el equivalente a una (1) cuota mensual de suscripción de la cuenta afectada.</li>
+                            <li><strong>Programas de capacitación privada:</strong> cuando el importe reembolsable corresponda a dos (2) o más sesiones no prestadas, o cuando se hubieran entregado materiales, acceso a software o recursos preparatorios al cliente antes de la cancelación.</li>
+                            <li><strong>Cualquier reembolso aprobado</strong> cuyo importe total supere los USD $200 (o su equivalente en moneda local al tipo de cambio de la fecha de la transacción original).</li>
+                        </ul>
+
+                        <h3 className="text-lg font-semibold text-gray-800 mb-2 mt-6">7.4 Calendario de cuotas y garantías</h3>
                         <p className="text-gray-700 leading-relaxed mb-4">
-                            En todo caso, Lingua Technologies Inc. se compromete a mantener comunicación activa con el cliente durante todo el proceso hasta la liquidación total del reembolso.
+                            Cuando aplique un plan de cuotas, Lingua Technologies Inc. garantiza las siguientes condiciones:
                         </p>
+                        <ul className="list-disc list-inside text-gray-700 leading-relaxed space-y-2 mb-4">
+                            <li>El reembolso total se abonará en un máximo de tres (5) cuotas.</li>
+                            <li>El importe íntegro quedará liquidado en un plazo máximo de sesenta (180) días naturales desde la confirmación por escrito del cliente del plan de cuotas.</li>
+                            <li>La primera cuota se emitirá dentro de los quince (15) días hábiles siguientes a la fecha de aprobación formal.</li>
+                            <li>Las cuotas sucesivas se emitirán en intervalos no superiores a veinte (30) días naturales cada una.</li>
+                            <li>No se aplicará ninguna comisión administrativa ni deducción sobre el importe aprobado del reembolso como resultado de la estructura de cuotas.</li>
+                        </ul>
+
+                        <h3 className="text-lg font-semibold text-gray-800 mb-2 mt-6">7.5 Notificación y confirmación</h3>
+                        <p className="text-gray-700 leading-relaxed mb-4">
+                            El cliente será notificado por escrito del calendario de cuotas propuesto antes de que se emita ningún pago. El cliente deberá confirmar su aceptación por escrito en un plazo de cinco (5) días hábiles desde la recepción de la notificación. La falta de respuesta dentro de este plazo se interpretará como aceptación del plan propuesto, iniciándose el procesamiento en consecuencia. Lingua Technologies Inc. se compromete a mantener comunicación escrita activa con el cliente durante todo el proceso hasta la liquidación total del reembolso.
+                        </p>
+
+                        <h3 className="text-lg font-semibold text-gray-800 mb-2 mt-6">7.6 Política sobre contracargos y reclamaciones ante terceros</h3>
                         <p className="text-gray-700 leading-relaxed">
-                            La presentación de disputas, chargebacks o reclamaciones ante terceros antes de agotar el procedimiento oficial establecido en esta política se considerará incumplimiento de los términos acordados y podrá resultar en la suspensión inmediata del acceso al servicio.
+                            La presentación de una disputa, contracargo (chargeback) o reclamación ante un procesador de pago, entidad bancaria o cualquier tercero antes de agotar el procedimiento oficial de reembolso establecido en esta política — y antes de recibir una respuesta escrita definitiva de Lingua Technologies Inc. — se considerará incumplimiento material de los términos acordados. Esto podrá dar lugar a: (i) suspensión inmediata del acceso a todos los servicios activos; (ii) pérdida de cualquier consideración de reembolso pendiente; y (iii) reclamación al cliente de los costos incurridos directamente por Lingua Technologies Inc. como consecuencia del proceso de contracargo, incluyendo comisiones de reversión del procesador y costos administrativos asociados. Lingua Technologies Inc. procurará siempre resolver las discrepancias de forma directa, justa y ágil a través de su canal oficial antes de que sea necesaria cualquier escalada ante terceros.
                         </p>
                     </section>
 
