@@ -14,7 +14,6 @@ import FormModal from './FormModal';
 const LandingPage: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const { i18n, t } = useTranslation();
-    const interactiveWidgetRef = useRef<HTMLDivElement>(null);
     const pricingRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -28,9 +27,6 @@ const LandingPage: React.FC = () => {
 
     const handleOpenModal = () => setIsModalOpen(true);
     const handleCloseModal = () => setIsModalOpen(false);
-    const handleScrollToDemo = () => {
-        interactiveWidgetRef.current?.scrollIntoView({ behavior: 'smooth' });
-    };
     const handleScrollToPricing = () => {
         pricingRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
@@ -44,10 +40,10 @@ const LandingPage: React.FC = () => {
                 </div>
             </div>
             <div className="relative z-10">
-                <Header onOpenModal={handleOpenModal} onScrollToPricing={handleScrollToPricing} />
+                <Header />
                 <main>
-                    <Hero onScrollToDemo={handleScrollToDemo} />
-                    <div ref={interactiveWidgetRef}>
+                    <Hero />
+                    <div>
                         <InteractiveWidget onOpenModal={handleOpenModal} />
                     </div>
                     <TrustedBy />
@@ -58,7 +54,7 @@ const LandingPage: React.FC = () => {
                     </div>
                     <CTA onOpenModal={handleOpenModal} />
                 </main>
-                <Footer />
+                <Footer onScrollToPricing={handleScrollToPricing} onOpenModal={handleOpenModal} />
             </div>
             <FormModal isOpen={isModalOpen} onClose={handleCloseModal} />
         </div>

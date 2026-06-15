@@ -9,7 +9,14 @@ export default {
     "title": "Ya sabes inglés. El problema es que no lo usas.",
     "subtitle": "Nuestra IA no te enseña más gramática. Te entrena a tu ritmo a hablar lo que ya sabes, hasta que salga solo.",
     "cta": "Para Empresas",
-    "independentCta": "Soy Independiente"
+    "independentCta": "Soy Independiente",
+    "trialCta": "Prueba 7 minutos gratis",
+    "trialSubtext": "Sin tarjeta. Sin compromiso.",
+    "emailModal": {
+      "title": "¿Con qué email entramos?",
+      "submit": "Entrar",
+      "placeholder": "tu@email.com"
+    }
   },
   "trustedBy": {
     "title": "Impulsando a los equipos más exigentes"

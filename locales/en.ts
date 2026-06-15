@@ -9,7 +9,14 @@ export default {
     "title": "You already know English. The problem is you don't use it.",
     "subtitle": "Our AI doesn't teach you more grammar. It trains you at your own pace to speak what you already know, until it comes naturally.",
     "cta": "For Companies",
-    "independentCta": "I'm Independent"
+    "independentCta": "I'm Independent",
+    "trialCta": "Try 7 minutes for free",
+    "trialSubtext": "No card. No commitment.",
+    "emailModal": {
+      "title": "What's your email?",
+      "submit": "Enter",
+      "placeholder": "you@email.com"
+    }
   },
   "trustedBy": {
     "title": "Powering the most demanding teams"

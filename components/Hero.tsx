@@ -1,7 +1,6 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 const VoiceWave: React.FC = () => (
     <div className="relative w-full max-w-2xl mx-auto h-48 flex items-center justify-center">
@@ -40,13 +39,14 @@ const VoiceWave: React.FC = () => (
     </div>
 );
 
-interface HeroProps {
-    onScrollToDemo: () => void;
-}
-
-const Hero: React.FC<HeroProps> = ({ onScrollToDemo }) => {
+const Hero: React.FC = () => {
     const { t } = useTranslation();
-    const navigate = useNavigate();
+    const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
+    const [email, setEmail] = useState('');
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+    };
 
     return (
         <section className="py-24 sm:py-32">
@@ -57,24 +57,62 @@ const Hero: React.FC<HeroProps> = ({ onScrollToDemo }) => {
                 <p className="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-gray-400">
                     {t('hero.subtitle')}
                 </p>
-                <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div className="mt-10 flex flex-col items-center gap-3">
                     <button
-                        onClick={onScrollToDemo}
-                        className="w-full sm:w-auto bg-violet-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg shadow-violet-600/30 hover:bg-violet-700 transition-all duration-300 transform hover:scale-105"
+                        onClick={() => setIsEmailModalOpen(true)}
+                        className="bg-violet-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg shadow-violet-600/30 hover:bg-violet-700 transition-all duration-300 transform hover:scale-105"
                     >
-                        {t('hero.cta')}
+                        {t('hero.trialCta')}
                     </button>
-                    <button
-                        onClick={() => navigate('/pro')}
-                        className="w-full sm:w-auto bg-transparent border border-gray-700 text-white font-semibold py-3 px-8 rounded-lg hover:bg-gray-800 transition-colors duration-300"
-                    >
-                        {t('hero.independentCta')}
-                    </button>
+                    <p className="text-sm text-gray-500">{t('hero.trialSubtext')}</p>
                 </div>
                 <div className="mt-15">
                     <VoiceWave />
                 </div>
             </div>
+
+            {isEmailModalOpen && (
+                <div
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+                    onClick={() => setIsEmailModalOpen(false)}
+                >
+                    <div
+                        className="relative bg-[#0F0F1A] border border-gray-800 rounded-2xl p-8 w-full max-w-md mx-4 shadow-2xl"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <button
+                            onClick={() => setIsEmailModalOpen(false)}
+                            className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"
+                            aria-label="Cerrar"
+                        >
+                            <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                        <h2 className="text-2xl font-bold text-white mb-6">
+                            {t('hero.emailModal.title')}
+                        </h2>
+                        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                            <input
+                                type="email"
+                                name="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder={t('hero.emailModal.placeholder')}
+                                required
+                                autoFocus
+                                className="w-full bg-[#05050A] border border-gray-700 text-white rounded-lg px-4 py-3 placeholder-gray-500 focus:outline-none focus:border-violet-500 transition-colors"
+                            />
+                            <button
+                                type="submit"
+                                className="w-full bg-violet-600 text-white font-semibold py-3 rounded-lg hover:bg-violet-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-violet-600/30"
+                            >
+                                {t('hero.emailModal.submit')}
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            )}
         </section>
     );
 };
