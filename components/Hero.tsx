@@ -43,9 +43,36 @@ const Hero: React.FC = () => {
     const { t } = useTranslation();
     const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
     const [email, setEmail] = useState('');
+    const [gdprChecked, setGdprChecked] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'exists' | 'error'>('idle');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: { preventDefault(): void }) => {
         e.preventDefault();
+        if (!gdprChecked || isLoading) return;
+        setIsLoading(true);
+        setSubmitStatus('idle');
+        try {
+            const res = await fetch(import.meta.env.VITE_CF_CREATE_TRIAL_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email }),
+            });
+            if (res.status === 409) { setSubmitStatus('exists'); return; }
+            if (!res.ok) { setSubmitStatus('error'); return; }
+            setSubmitStatus('success');
+        } catch {
+            setSubmitStatus('error');
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const handleOpenModal = () => {
+        setEmail('');
+        setGdprChecked(false);
+        setSubmitStatus('idle');
+        setIsEmailModalOpen(true);
     };
 
     return (
@@ -59,7 +86,7 @@ const Hero: React.FC = () => {
                 </p>
                 <div className="mt-10 flex flex-col items-center gap-3">
                     <button
-                        onClick={() => setIsEmailModalOpen(true)}
+                        onClick={handleOpenModal}
                         className="bg-violet-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg shadow-violet-600/30 hover:bg-violet-700 transition-all duration-300 transform hover:scale-105"
                     >
                         {t('hero.trialCta')}
@@ -103,12 +130,41 @@ const Hero: React.FC = () => {
                                 autoFocus
                                 className="w-full bg-[#05050A] border border-gray-700 text-white rounded-lg px-4 py-3 placeholder-gray-500 focus:outline-none focus:border-violet-500 transition-colors"
                             />
+                            <label className="flex items-start gap-2 text-sm text-gray-400 cursor-pointer">
+                                <input
+                                    type="checkbox"
+                                    checked={gdprChecked}
+                                    onChange={(e) => setGdprChecked(e.target.checked)}
+                                    className="mt-0.5 accent-violet-500"
+                                />
+                                <span>
+                                    Acepto recibir comunicaciones de LinguaX AI y el tratamiento de mis datos según la{' '}
+                                    <a href="#" className="text-violet-400 hover:underline">Política de Privacidad</a>.
+                                </span>
+                            </label>
                             <button
                                 type="submit"
-                                className="w-full bg-violet-600 text-white font-semibold py-3 rounded-lg hover:bg-violet-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-violet-600/30"
+                                disabled={!gdprChecked || isLoading}
+                                className="w-full bg-violet-600 text-white font-semibold py-3 rounded-lg hover:bg-violet-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-violet-600/30 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                             >
-                                {t('hero.emailModal.submit')}
+                                {isLoading ? 'Enviando...' : t('hero.emailModal.submit')}
                             </button>
+                            {submitStatus === 'success' && (
+                                <p className="text-green-400 text-sm text-center mt-2">
+                                    Revisa tu email — te enviamos el acceso a LinguaX AI.
+                                </p>
+                            )}
+                            {submitStatus === 'exists' && (
+                                <p className="text-yellow-400 text-sm text-center mt-2">
+                                    Ya tienes una cuenta.{' '}
+                                    <a href="https://app.linguax-ai.com" className="underline">Entra desde aquí →</a>
+                                </p>
+                            )}
+                            {submitStatus === 'error' && (
+                                <p className="text-red-400 text-sm text-center mt-2">
+                                    Algo salió mal. Intenta de nuevo o escríbenos a hola@linguax-ai.com
+                                </p>
+                            )}
                         </form>
                     </div>
                 </div>

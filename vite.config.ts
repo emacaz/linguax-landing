@@ -8,6 +8,13 @@ export default defineConfig(({ mode }) => {
       server: {
         port: 3000,
         host: '0.0.0.0',
+        proxy: {
+          '/cf': {
+            target: 'https://us-central1-linguax-ai.cloudfunctions.net',
+            changeOrigin: true,
+            rewrite: (path) => path.replace(/^\/cf/, ''),
+          },
+        },
       },
       plugins: [react()],
       define: {

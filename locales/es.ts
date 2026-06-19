@@ -7,7 +7,7 @@ export default {
   },
   "hero": {
     "title": "Ya sabes inglés. El problema es que no lo usas.",
-    "subtitle": "Nuestra IA no te enseña más gramática. Te entrena a tu ritmo a hablar lo que ya sabes, hasta que salga solo.",
+    "subtitle": "Cada sesión, LinguaX aprende cómo hablas tú. En 4 semanas conoce tu punto débil mejor que tú mismo.",
     "cta": "Para Empresas",
     "independentCta": "Soy Independiente",
     "trialCta": "Prueba 7 minutos gratis",
