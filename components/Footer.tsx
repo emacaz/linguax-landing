@@ -4,7 +4,12 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { XIcon, LinkedInIcon } from './icons';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+    onScrollToPricing?: () => void;
+    onOpenModal?: () => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onScrollToPricing, onOpenModal }) => {
     const { t } = useTranslation();
     const currentYear = new Date().getFullYear();
 
@@ -20,18 +25,18 @@ const Footer: React.FC = () => {
                     </p>
                 </div>
                 <div className="mt-6 flex justify-center items-center space-x-6">
-                    <a 
-                        href="https://x.com/LinguaX_AI" 
-                        target="_blank" 
+                    <a
+                        href="https://x.com/LinguaX_AI"
+                        target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinguaX on X"
                         className="text-gray-500 hover:text-white transition-colors duration-300"
                     >
                         <XIcon />
                     </a>
-                    <a 
-                        href="https://www.linkedin.com/company/linguax-ai/" 
-                        target="_blank" 
+                    <a
+                        href="https://www.linkedin.com/company/linguax-ai/"
+                        target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinguaX on LinkedIn"
                         className="text-gray-500 hover:text-white transition-colors duration-300"
@@ -40,14 +45,40 @@ const Footer: React.FC = () => {
                     </a>
                 </div>
                 <div className="mt-6 flex justify-center items-center space-x-6 text-sm">
-                    <Link 
-                        to="/refund-policy-en" 
+                    {onScrollToPricing && (
+                        <button
+                            onClick={onScrollToPricing}
+                            className="text-gray-500 hover:text-white transition-colors duration-300"
+                        >
+                            {t('header.pricing')}
+                        </button>
+                    )}
+                    {onOpenModal && (
+                        <button
+                            onClick={onOpenModal}
+                            className="text-gray-500 hover:text-white transition-colors duration-300"
+                        >
+                            {t('header.contact')}
+                        </button>
+                    )}
+                    <a
+                        href="https://app.linguax-ai.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-500 hover:text-white transition-colors duration-300"
+                    >
+                        {t('header.login')}
+                    </a>
+                </div>
+                <div className="mt-4 flex justify-center items-center space-x-6 text-sm">
+                    <Link
+                        to="/refund-policy-en"
                         className="text-gray-500 hover:text-white transition-colors duration-300"
                     >
                         {t('footer.legal.refundPolicyEN')}
                     </Link>
-                    <Link 
-                        to="/refund-policy-es" 
+                    <Link
+                        to="/refund-policy-es"
                         className="text-gray-500 hover:text-white transition-colors duration-300"
                     >
                         {t('footer.legal.refundPolicyES')}
