@@ -6,8 +6,8 @@ export default {
     "forProfessionals": "For Professionals"
   },
   "hero": {
-    "title": "You already know English. The problem is you don't use it.",
-    "subtitle": "Our AI doesn't teach you more grammar. It trains you at your own pace to speak what you already know, until it comes naturally.",
+    "title": "You already know English, the problem is you've never built your voice",
+    "subtitle": "You produce each sentence out loud, with help when you get stuck and time to think. That's how a language is built — not by repeating scripts.",
     "cta": "For Companies",
     "independentCta": "I'm Independent",
     "trialCta": "Try 7 minutes for free",
@@ -15,48 +15,53 @@ export default {
     "emailModal": {
       "title": "What's your email?",
       "submit": "Enter",
-      "placeholder": "you@email.com"
+      "placeholder": "you@email.com",
+      "submitting": "Sending...",
+      "gdprLabel": "I agree to receive communications from LinguaX AI and to the processing of my data per the",
+      "gdprLinkText": "Privacy Policy",
+      "closeAria": "Close",
+      "success": "Check your email — we sent your access to LinguaX AI. No password, it arrives in seconds.",
+      "existsMessage": "You already have an account.",
+      "existsLink": "Log in here →",
+      "errorMessage": "Something went wrong. Try again or email us at hola@linguax-ai.com"
     }
   },
-  "trustedBy": {
-    "title": "Powering the most demanding teams"
-  },
   "features": {
-    "title": "Unprecedented Power. Measurable Results.",
-    "subtitle": "LinguaX is not just a tool; it's the infrastructure your team needs to master communication.",
+    "title": "It's not theory. It's real conversation training.",
+    "subtitle": "The difference isn't more grammar — it's a practice mode that adapts to how you speak, not the other way around.",
     "analysis": {
-      "title": "AI Tonal Analysis",
-      "description": "Our AI analyzes tone, rhythm, and clarity to optimize every conversation and improve effectiveness."
+      "title": "Human Mode: at your pace",
+      "description": "Manual turns, no interruptions. The AI waits for you to finish thinking instead of rushing you like a real call."
     },
     "integration": {
-      "title": "Seamless Integration",
-      "description": "Integrates with your existing CRM and communication platforms frictionlessly, in a matter of minutes."
+      "title": "Help when you need it",
+      "description": "Stuck? Get a hint or an instant translation without leaving the conversation."
     },
     "security": {
-      "title": "Enterprise-Grade Security",
-      "description": "Secure and reliable infrastructure, designed for corporate demands and data protection."
+      "title": "Immersion mode",
+      "description": "An orb that reacts to your voice in real time — it feels like talking to someone, not a menu."
     }
   },
   "howItWorks": {
-    "title": "Implementation in 3 Simple Steps",
-    "subtitle": "Start transforming your team's communication in record time.",
+    "title": "This simple",
+    "subtitle": "From watching the video to speaking English in under a minute.",
     "step1": {
-      "title": "Connect",
-      "description": "Connect your current systems in minutes through our secure and robust API."
+      "title": "Enter your email",
+      "description": "No long forms. Just your email."
     },
     "step2": {
-      "title": "Train",
-      "description": "The AI begins to analyze conversations and provides actionable feedback in real-time."
+      "title": "Open your access",
+      "description": "We send a magic link to your inbox — no password to remember."
     },
     "step3": {
-      "title": "Optimize",
-      "description": "See a measurable increase in effectiveness, closing rates, and customer satisfaction."
+      "title": "Practice 7 minutes free",
+      "description": "Jump straight into a real conversation in Human Mode."
     }
   },
   "cta": {
-    "title": "Ready to redefine your company's communication?",
-    "subtitle": "Talk to a specialist to discover how LinguaX can impact your ROI and take your team to the next level.",
-    "cta": "Schedule a Strategic Demo"
+    "title": "Stop postponing it. Speak now.",
+    "subtitle": "Your 7 free minutes are one click away. No card, no commitment.",
+    "cta": "Try 7 minutes for free"
   },
   "footer": {
     "badge": "A Delaware Corporation / US Based Infrastructure",
@@ -67,124 +72,9 @@ export default {
       "refundPolicyEN": "Refund Policy (EN)"
     }
   },
-  "form": {
-    "title": "Request a Demo",
-    "subtitle": "Complete the form and a specialist will be in touch.",
-    "fullName": "Full Name",
-    "businessEmail": "Business Email",
-    "companyName": "Company Name",
-    "role": "Role",
-    "roleOptional": "Role (Optional)",
-    "teamSize": "Team Size",
-    "teamSizeOptional": "Team Size (Optional)",
-    "selectSize": "Select size",
-    "phone": "Phone",
-    "phoneOptional": "Phone (Optional)",
-    "country": "Country",
-    "countryOptional": "Country (Optional)",
-    "comments": "Comments",
-    "commentsOptional": "Comments (Optional)",
-    "commentsPlaceholder": "What problem are you looking to solve?",
-    "submit": "Schedule Strategic Demo",
-    "submitting": "Submitting...",
-    "error": "There was an error submitting the form. Please try again.",
-    "success": {
-      "title": "Request Received!",
-      "message": "Thank you for your interest. Our team will contact you within the next 24 hours to schedule your strategic demo.",
-      "close": "Close"
-    }
-  },
   "page": {
     "title": "LinguaX | AI Voice Coach for Business",
     "description": "The first AI voice infrastructure for high-performance teams. We transform your sales and support team's communication."
-  },
-  "interactiveWidget": {
-    "hook": {
-      "title": "Does your voice inspire confidence or create doubt?",
-      "subtitle": "Get your Executive Clarity Score in 15 seconds. Analyze your pronunciation and prosody with the same AI used by industry leaders."
-    },
-    "scenarios": {
-      "pharma": {
-        "label": "Pharmaceutical",
-        "context": "You are presenting clinical trial results to a regulatory committee. Say the following sentence with authority:",
-        "phrase": "Our pharmacokinetic data demonstrates superior bioavailability.",
-        "frictionWord": "bioavailability",
-        "tooltipAnalysis": "The 'vaila' sequence was pronounced with a cadence that can be misheard by native speakers. The optimal pronunciation for maximum clarity is '...veɪlə...'",
-        "tooltipImpact": "In a regulatory presentation, phonetic ambiguity can lead to additional questions, delaying approval."
-      },
-      "financial": {
-        "label": "Financial",
-        "context": "You are on a call with key investors justifying your projections. Say the following sentence with conviction:",
-        "phrase": "We project a seventeen percent increase in quarterly recurring revenue.",
-        "frictionWord": "recurring",
-        "tooltipAnalysis": "The 'rr' phoneme was pronounced softly, which can sound like 'recuring', affecting the perception of confidence.",
-        "tooltipImpact": "A lack of phonetic conviction can be interpreted as a lack of confidence in the data, weakening your argument."
-      },
-      "tech": {
-        "label": "Technological",
-        "context": "You are presenting your product roadmap to the board of directors. Say the following sentence with clarity:",
-        "phrase": "This architecture scales horizontally to meet enterprise demand.",
-        "frictionWord": "architecture",
-        "tooltipAnalysis": "The syllable 'tec' was over-emphasized, breaking the natural flow of the sentence and distracting from the core message.",
-        "tooltipImpact": "A disjointed delivery can make complex technical concepts seem confusing, raising doubts about the strategy."
-      },
-      "legal": {
-        "label": "Legal",
-        "context": "You are presenting a key argument before a judge. Say the following sentence with firmness:",
-        "phrase": "The precedent set by this case is incontrovertible.",
-        "frictionWord": "incontrovertible",
-        "tooltipAnalysis": "The syllable 'ver' was pronounced with a flattened intonation, reducing the emphasis on the word's core meaning of irrefutability.",
-        "tooltipImpact": "In a legal setting, a lack of phonetic conviction on a power word like 'incontrovertible' can be subconsciously interpreted by a judge or jury as a lack of confidence in the argument itself."
-      }
-    },
-    "recording": {
-      "instruction": "Press and hold to record",
-      "enableMic": "Click to enable microphone",
-      "tooShort": "Hold down for longer.",
-      "noSpeech": "No speech detected. Please try again.",
-      "incomplete": "Try to say the full phrase."
-    },
-    "analysis": {
-      "title": "Analysis in Progress...",
-      "status1": "Analyzing phonemes...",
-      "status2": "Mapping prosody...",
-      "status3": "Calculating rhythm...",
-      "status4": "Contrasting with base model..."
-    },
-    "results": {
-      "title": "Your Executive Clarity Diagnosis",
-      "clarityIndexLabel": "Clarity Score",
-      "qualitativeLabels": {
-        "elite": "Elite",
-        "convincing": "Convincing",
-        "functional": "Functional",
-        "riskArea": "Risk Area"
-      },
-      "phoneticAnalysis": {
-        "title": "Phonetic Analysis",
-        "tooltipTitle": "Phonetic Friction Point"
-      },
-      "prosodyAnalysis": {
-        "title": "Prosody Analysis",
-        "modelWaveLabel": "LinguaX Ai Impact Model",
-        "userWaveLabel": "Your Delivery",
-        "modelAnnotation1": "Emphasis on key data",
-        "modelAnnotation2": "Strategic pause",
-        "userAnnotation1": "Accelerated pace",
-        "userAnnotation2": "Monotone intonation",
-        "metricLabel": "Persuasive Cadence Index",
-        "impact": "Studies show that a monotone delivery can reduce audience retention by up to 40%. LinguaX Ai trains you to use intonation as a tool to persuade."
-      },
-      "cta": {
-        "highScoreText": "Your {{score}}% score is strong. Imagine the impact you'd make by closing that final {{diff}}% to achieve elite-level communication in all your global interactions. LinguaX Ai is your gym to get there.",
-        "lowScoreText": "Your {{score}}% score indicates a risk that your message loses impact and is misinterpreted. This {{diff}}% is the difference between an accepted idea and a rejected one. LinguaX Ai is designed to close that gap quickly.",
-        "primaryButton": "Schedule an Executive Demo",
-        "secondaryButton": "Want to try again?"
-      }
-    },
-    "permissions": {
-      "denied": "Microphone permission denied. Please enable it in your browser settings to use this feature."
-    }
   },
   "login": {
     "title": "Sign in to your account",
@@ -252,72 +142,19 @@ export default {
     }
   },
   "pricing": {
-    "title": "Plans designed for your growth",
-    "subtitle": "Choose the plan that fits your team's current stage and scale with us.",
-    "monthly": "Monthly",
-    "annually": "Annually",
-    "save_annually": "Save up to 15%",
-    "per_user_per_month": "/ user / month",
-    "billed_annually": "billed annually",
-    "mostPopular": "Most Popular",
-    "starter": {
-      "name": "STARTER",
-      "valueProposition": "The essential tool for your elite team to gain confidence and master every conversation.",
-      "userCount": "1 - 5 Users",
-      "features": [
-        "Unlimited Sessions (Guided Mode)",
-        "Post-Session Fluency Analysis",
-        "Individual Performance Dashboard",
-        "Performance History (90 days)",
-        "Standard Business Context Library",
-        "Email Support"
-      ],
-      "cta": "Get Started"
+    "title": "One simple price. Try it before you decide.",
+    "subtitle": "Once your free minutes are up, here's how simple it is to keep practicing.",
+    "monthly": {
+      "name": "Monthly",
+      "price": "$93 USD",
+      "cta": "Start free"
     },
-    "growth": {
-      "name": "GROWTH",
-      "valueProposition": "Equip your managers with the visibility to turn a good team into an unstoppable sales force.",
-      "userCount": "6 - 20 Users",
-      "features": [
-        "Everything in Starter, plus:",
-        "Manager Dashboard (Team View)",
-        "Comparative Member Analysis",
-        "Unlimited Performance History",
-        "Custom Training Context Creation",
-        "Priority Email Support",
-        "Annual Billing Discount (10%)"
-      ],
-      "cta": "Select Plan"
-    },
-    "business": {
-      "name": "BUSINESS",
-      "valueProposition": "Integrate communication excellence as a strategic pillar of your business.",
-      "userCount": "21 - 50 Users",
-      "features": [
-        "Everything in Growth, plus:",
-        "Advanced Team Analytics",
-        "AI-Powered Improvement Roadmaps",
-        "Corporate Branding (Logo & Colors)",
-        "Dedicated Account Manager",
-        "Annual Billing Discount (15%)"
-      ],
-      "cta": "Request Demo"
-    },
-    "enterprise": {
-      "name": "ENTERPRISE",
-      "valueProposition": "A scalable, secure, and fully integrated solution for your corporation's demands.",
-      "userCount": "50+ Users",
-      "price": "Custom",
-      "features": [
-        "Everything in Business, plus:",
-        "SSO Integration (SAML, Okta, etc.)",
-        "API Access",
-        "Security and Compliance Audits",
-        "Custom Onboarding and Training",
-        "Bespoke Content Creation",
-        "Service Level Agreement (SLA)"
-      ],
-      "cta": "Contact Sales"
+    "annual": {
+      "tag": "Most Popular",
+      "name": "Annual",
+      "price": "$930 USD",
+      "equivalent": "2 months free",
+      "cta": "Start free"
     }
   },
   "proPage": {
