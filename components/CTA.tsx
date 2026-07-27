@@ -3,10 +3,10 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface CTAProps {
-    onOpenModal: () => void;
+    onOpenTrialModal: () => void;
 }
 
-const CTA: React.FC<CTAProps> = ({ onOpenModal }) => {
+const CTA: React.FC<CTAProps> = ({ onOpenTrialModal }) => {
     const { t } = useTranslation();
 
     return (
@@ -20,7 +20,7 @@ const CTA: React.FC<CTAProps> = ({ onOpenModal }) => {
                 </p>
                 <div className="mt-10">
                     <button
-                        onClick={onOpenModal}
+                        onClick={onOpenTrialModal}
                         className="inline-block bg-violet-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg shadow-violet-600/30 hover:bg-violet-700 transition-all duration-300 transform hover:scale-105"
                     >
                         {t('cta.cta')}

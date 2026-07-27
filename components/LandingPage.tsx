@@ -2,17 +2,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import Header from './Header';
 import Hero from './Hero';
-import TrustedBy from './TrustedBy';
 import Features from './Features';
-import InteractiveWidget from './InteractiveWidget';
 import HowItWorks from './HowItWorks';
 import Pricing from './Pricing';
 import CTA from './CTA';
 import Footer from './Footer';
-import FormModal from './FormModal';
+import TrialModal from './TrialModal';
 
 const LandingPage: React.FC = () => {
-    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [isTrialModalOpen, setIsTrialModalOpen] = useState<boolean>(false);
     const { i18n, t } = useTranslation();
     const pricingRef = useRef<HTMLDivElement>(null);
 
@@ -25,8 +23,8 @@ const LandingPage: React.FC = () => {
         }
     }, [i18n.language, t]);
 
-    const handleOpenModal = () => setIsModalOpen(true);
-    const handleCloseModal = () => setIsModalOpen(false);
+    const handleOpenTrialModal = () => setIsTrialModalOpen(true);
+    const handleCloseTrialModal = () => setIsTrialModalOpen(false);
     const handleScrollToPricing = () => {
         pricingRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
@@ -42,21 +40,17 @@ const LandingPage: React.FC = () => {
             <div className="relative z-10">
                 <Header />
                 <main>
-                    <Hero />
-                    <div>
-                        <InteractiveWidget onOpenModal={handleOpenModal} />
-                    </div>
-                    <TrustedBy />
+                    <Hero onOpenTrialModal={handleOpenTrialModal} />
                     <Features />
                     <HowItWorks />
                     <div ref={pricingRef}>
-                        <Pricing onOpenModal={handleOpenModal} />
+                        <Pricing onOpenTrialModal={handleOpenTrialModal} />
                     </div>
-                    <CTA onOpenModal={handleOpenModal} />
+                    <CTA onOpenTrialModal={handleOpenTrialModal} />
                 </main>
-                <Footer onScrollToPricing={handleScrollToPricing} onOpenModal={handleOpenModal} />
+                <Footer onScrollToPricing={handleScrollToPricing} />
             </div>
-            <FormModal isOpen={isModalOpen} onClose={handleCloseModal} />
+            <TrialModal isOpen={isTrialModalOpen} onClose={handleCloseTrialModal} />
         </div>
     );
 };

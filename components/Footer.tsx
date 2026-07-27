@@ -6,10 +6,9 @@ import { XIcon, LinkedInIcon } from './icons';
 
 interface FooterProps {
     onScrollToPricing?: () => void;
-    onOpenModal?: () => void;
 }
 
-const Footer: React.FC<FooterProps> = ({ onScrollToPricing, onOpenModal }) => {
+const Footer: React.FC<FooterProps> = ({ onScrollToPricing }) => {
     const { t } = useTranslation();
     const currentYear = new Date().getFullYear();
 
@@ -51,14 +50,6 @@ const Footer: React.FC<FooterProps> = ({ onScrollToPricing, onOpenModal }) => {
                             className="text-gray-500 hover:text-white transition-colors duration-300"
                         >
                             {t('header.pricing')}
-                        </button>
-                    )}
-                    {onOpenModal && (
-                        <button
-                            onClick={onOpenModal}
-                            className="text-gray-500 hover:text-white transition-colors duration-300"
-                        >
-                            {t('header.contact')}
                         </button>
                     )}
                     <a
