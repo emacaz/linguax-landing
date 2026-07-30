@@ -8,7 +8,7 @@ interface TrialModalProps {
 }
 
 const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose }) => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [email, setEmail] = useState('');
     const [gdprChecked, setGdprChecked] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
@@ -41,7 +41,7 @@ const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose }) => {
             const res = await fetch(import.meta.env.VITE_CF_CREATE_TRIAL_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email }),
+                body: JSON.stringify({ email, lang: i18n.language }),
             });
             if (res.status === 409) { setSubmitStatus('exists'); return; }
             if (!res.ok) { setSubmitStatus('error'); return; }
