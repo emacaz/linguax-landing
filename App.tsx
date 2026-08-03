@@ -7,6 +7,8 @@ const ProOnboardingPage = lazy(() => import('./components/pro/onboarding/ProOnbo
 const SpringPage = lazy(() => import('./components/SpringPage'));
 const RefundPolicyEN = lazy(() => import('./components/RefundPolicyEN'));
 const RefundPolicyES = lazy(() => import('./components/RefundPolicyES'));
+const PrivacyPolicyEN = lazy(() => import('./components/PrivacyPolicyEN'));
+const PrivacyPolicyES = lazy(() => import('./components/PrivacyPolicyES'));
 
 const App: React.FC = () => {
     return (
@@ -18,7 +20,8 @@ const App: React.FC = () => {
                 <Route path="/spring" element={<SpringPage />} />
                 <Route path="/refund-policy-en" element={<RefundPolicyEN />} />
                 <Route path="/refund-policy-es" element={<RefundPolicyES />} />
-                
+                <Route path="/privacy-policy-en" element={<PrivacyPolicyEN />} />
+                <Route path="/privacy-policy-es" element={<PrivacyPolicyES />} />
             </Routes>
         </Suspense>
     );
