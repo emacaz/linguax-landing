@@ -69,7 +69,9 @@ export default {
     "legal": {
       "refundPolicy": "Política de Reembolso",
       "refundPolicyES": "Política de Reembolso (ES)",
-      "refundPolicyEN": "Refund Policy (EN)"
+      "refundPolicyEN": "Refund Policy (EN)",
+      "privacyPolicyES": "Política de Privacidad (ES)",
+      "privacyPolicyEN": "Privacy Policy (EN)"
     }
   },
   "page": {

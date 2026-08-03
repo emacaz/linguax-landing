@@ -74,6 +74,18 @@ const Footer: React.FC<FooterProps> = ({ onScrollToPricing }) => {
                     >
                         {t('footer.legal.refundPolicyES')}
                     </Link>
+                    <Link
+                        to="/privacy-policy-en"
+                        className="text-gray-500 hover:text-white transition-colors duration-300"
+                    >
+                        {t('footer.legal.privacyPolicyEN')}
+                    </Link>
+                    <Link
+                        to="/privacy-policy-es"
+                        className="text-gray-500 hover:text-white transition-colors duration-300"
+                    >
+                        {t('footer.legal.privacyPolicyES')}
+                    </Link>
                 </div>
             </div>
         </footer>
