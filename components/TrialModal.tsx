@@ -96,7 +96,14 @@ const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose }) => {
                         />
                         <span>
                             {t('hero.emailModal.gdprLabel')}{' '}
-                            <a href="#" className="text-violet-400 hover:underline">{t('hero.emailModal.gdprLinkText')}</a>.
+                            <a
+                                href={i18n.language.startsWith('es') ? '/privacy-policy-es' : '/privacy-policy-en'}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-violet-400 hover:underline"
+                            >
+                                {t('hero.emailModal.gdprLinkText')}
+                            </a>.
                         </span>
                     </label>
                     <button

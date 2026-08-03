@@ -170,7 +170,7 @@ const RefundPolicyEN: React.FC = () => {
                     </Link>
                 </div>
             </div>
-            <Footer />
+            <Footer light />
         </div>
     );
 };
