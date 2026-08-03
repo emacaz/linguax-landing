@@ -6,11 +6,15 @@ import { XIcon, LinkedInIcon } from './icons';
 
 interface FooterProps {
     onScrollToPricing?: () => void;
+    light?: boolean;
 }
 
-const Footer: React.FC<FooterProps> = ({ onScrollToPricing }) => {
+const Footer: React.FC<FooterProps> = ({ onScrollToPricing, light = false }) => {
     const { t } = useTranslation();
     const currentYear = new Date().getFullYear();
+    const linkClass = light
+        ? "text-gray-500 hover:text-gray-900 transition-colors duration-300"
+        : "text-gray-500 hover:text-white transition-colors duration-300";
 
     return (
         <footer className="py-12 border-t border-gray-800/50">
@@ -29,7 +33,7 @@ const Footer: React.FC<FooterProps> = ({ onScrollToPricing }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinguaX on X"
-                        className="text-gray-500 hover:text-white transition-colors duration-300"
+                        className={linkClass}
                     >
                         <XIcon />
                     </a>
@@ -38,7 +42,7 @@ const Footer: React.FC<FooterProps> = ({ onScrollToPricing }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinguaX on LinkedIn"
-                        className="text-gray-500 hover:text-white transition-colors duration-300"
+                        className={linkClass}
                     >
                         <LinkedInIcon />
                     </a>
@@ -47,7 +51,7 @@ const Footer: React.FC<FooterProps> = ({ onScrollToPricing }) => {
                     {onScrollToPricing && (
                         <button
                             onClick={onScrollToPricing}
-                            className="text-gray-500 hover:text-white transition-colors duration-300"
+                            className={linkClass}
                         >
                             {t('header.pricing')}
                         </button>
@@ -56,34 +60,22 @@ const Footer: React.FC<FooterProps> = ({ onScrollToPricing }) => {
                         href="https://app.linguax-ai.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-500 hover:text-white transition-colors duration-300"
+                        className={linkClass}
                     >
                         {t('header.login')}
                     </a>
                 </div>
                 <div className="mt-4 flex justify-center items-center space-x-6 text-sm">
-                    <Link
-                        to="/refund-policy-en"
-                        className="text-gray-500 hover:text-white transition-colors duration-300"
-                    >
+                    <Link to="/refund-policy-en" className={linkClass}>
                         {t('footer.legal.refundPolicyEN')}
                     </Link>
-                    <Link
-                        to="/refund-policy-es"
-                        className="text-gray-500 hover:text-white transition-colors duration-300"
-                    >
+                    <Link to="/refund-policy-es" className={linkClass}>
                         {t('footer.legal.refundPolicyES')}
                     </Link>
-                    <Link
-                        to="/privacy-policy-en"
-                        className="text-gray-500 hover:text-white transition-colors duration-300"
-                    >
+                    <Link to="/privacy-policy-en" className={linkClass}>
                         {t('footer.legal.privacyPolicyEN')}
                     </Link>
-                    <Link
-                        to="/privacy-policy-es"
-                        className="text-gray-500 hover:text-white transition-colors duration-300"
-                    >
+                    <Link to="/privacy-policy-es" className={linkClass}>
                         {t('footer.legal.privacyPolicyES')}
                     </Link>
                 </div>

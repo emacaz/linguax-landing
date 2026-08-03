@@ -140,7 +140,7 @@ const PrivacyPolicyEN: React.FC = () => {
                     </Link>
                 </div>
             </div>
-            <Footer />
+            <Footer light />
         </div>
     );
 };
