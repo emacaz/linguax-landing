@@ -75,8 +75,8 @@ export default {
     }
   },
   "page": {
-    "title": "LinguaX | Entrenador de Voz con IA para Empresas",
-    "description": "La primera infraestructura de voz con IA para equipos de alto rendimiento. Transformamos la comunicación de su equipo de ventas y soporte."
+    "title": "LinguaX | Entrenador de habla en inglés con IA conversacional en tiempo real",
+    "description": "Un entrenador de IA que espera mientras armas la frase — sin apurarte, sin memorizar guiones. Prueba 7 minutos gratis, sin tarjeta."
   },
   "login": {
     "title": "Accede a tu cuenta",

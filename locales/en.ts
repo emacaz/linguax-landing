@@ -75,8 +75,8 @@ export default {
     }
   },
   "page": {
-    "title": "LinguaX | AI Voice Coach for Business",
-    "description": "The first AI voice infrastructure for high-performance teams. We transform your sales and support team's communication."
+    "title": "LinguaX | Real-Time AI Conversational English Speaking Trainer",
+    "description": "An AI trainer that waits while you build the sentence — no rushing, no scripts to memorize. Try 7 minutes free, no card."
   },
   "login": {
     "title": "Sign in to your account",
