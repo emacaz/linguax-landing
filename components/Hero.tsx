@@ -62,7 +62,6 @@ const Hero: React.FC<HeroProps> = ({ onOpenTrialModal }) => {
                     >
                         {t('hero.trialCta')}
                     </button>
-                    <p className="text-sm text-gray-500">{t('hero.trialSubtext')}</p>
                 </div>
                 <div className="mt-15">
                     <VoiceWave />

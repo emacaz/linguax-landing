@@ -6,12 +6,11 @@ export default {
     "forProfessionals": "Para Profesionales"
   },
   "hero": {
-    "title": "Ya sabes inglés, el problema es que nunca has construido tu voz",
-    "subtitle": "Produces cada frase en voz alta, con ayudas cuando te trabas y tiempo para pensar. Así se construye un idioma — no solo repitiendo textos.",
+    "title": "Entiendes inglés. Ahora háblalo sin bloquearte",
+    "subtitle": "Tu Coach de IA Privado de inglés conversacional. Practica las reuniones, llamadas y entrevistas que te bloquean, a tu ritmo y sin vergüenza.",
     "cta": "Para Empresas",
     "independentCta": "Soy Independiente",
-    "trialCta": "Prueba 4 minutos gratis",
-    "trialSubtext": "Sin tarjeta. Sin compromiso.",
+    "trialCta": "Habla con tu Coach gratis",
     "emailModal": {
       "title": "¿Con qué email entramos?",
       "submit": "Entrar",

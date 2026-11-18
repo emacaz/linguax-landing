@@ -6,12 +6,11 @@ export default {
     "forProfessionals": "For Professionals"
   },
   "hero": {
-    "title": "You already know English, the problem is you've never built your voice",
-    "subtitle": "You produce each sentence out loud, with help when you get stuck and time to think. That's how a language is built — not by repeating scripts.",
+    "title": "You understand English. Now speak it without freezing up",
+    "subtitle": "Your private AI coach for conversational English. Practice the meetings, calls and interviews that freeze you up — at your own pace, with no embarrassment.",
     "cta": "For Companies",
     "independentCta": "I'm Independent",
-    "trialCta": "Try 4 minutes for free",
-    "trialSubtext": "No card. No commitment.",
+    "trialCta": "Talk to your coach for free",
     "emailModal": {
       "title": "What's your email?",
       "submit": "Enter",
